@@ -1,0 +1,39 @@
+
+Figures/
+ROOT_Canvases/
+
+#Build files
+*.aux
+*.bbl
+*.bst
+*.log
+*.out
+*.bib
+*.blg
+*.dvi
+*.pdf
+*.spl
+*.gz
+*.docx
+*synctex*
+*.tex~
+
+*.sty
+
+#Image Files
+*.jpg
+*.JPG
+*.png
+*.PNG
+*.eps
+
+#Backup files 
+
+#Compressed Files
+*.bz2
+*.tgz
+*.tar.gz
+
+#ROOT files
+*.root
+
