@@ -1,0 +1,145 @@
+%\documentclass[review]{elsarticle}
+\documentclass[preprint,3p,twocolumn]{elsarticle}
+\usepackage{lineno,hyperref}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{subcaption}
+\usepackage{verbatim}
+\usepackage[percent]{overpic}
+\modulolinenumbers[10]
+
+%\journal{NIMA}  %FOR NOW THIS IS AN ARXIV PAPER
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Elsevier bibliography styles
+%%%%%%%%%%%%%%%%%%%%%%%
+%% To change the style, put a % in front of the second line of the current style and
+%% remove the % from the second line of the style you would like to use.
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{DRAFT: Conceptual design of a new neutron detector with neutron localization capabilities}
+%\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
+
+
+%% Group authors per affiliation:
+\author[mymainaddress]{D. P\'erez-Loureiro}
+\ead{dperezlo@utk.edu}
+\author[mymainaddress]{J. Heideman}
+
+
+\author[mymainaddress,ORNLaddress]{R. Grzywacz\corref{mycorrespondingauthor}}
+\cortext[mycorrespondingauthor]{Corresponding author}
+\ead{rgrzywac@utk.edu}
+
+\author[mymainaddress]{K. Schmitt\fnref{now}}
+\fntext[now]{Present address: Los Alamos National Laboratory, Los Alamos, New Mexico 87545, USA}
+\author[mymainaddress]{C. R. Thornsberry}
+\author[mymainaddress]{S. K. Neupane}
+
+\author[TTUaddress]{M. M. Rajabali}
+\author[TTUaddress]{A. R. Engelhardt}
+\author[TTUaddress]{C. W. Howell}
+\author[TTUaddress]{L. D. Mostella}
+\author[TTUaddress]{J. S. Owens}
+\author[TTUaddress]{S. C. Shadrick}
+
+\author[JINPAaddress]{S. Munoz}
+
+
+\author[mymainaddress]{J. Chen}
+
+%\author[otheraddress]{Others}
+
+
+\address[mymainaddress]{Department of Physics and Astronomy,  University of Tennessee, Knoxville, Tennessee , 37996 USA}
+\address[ORNLaddress]{Physics Division, Oak Ridge National Laboratory, Oak Ridge TN 37831 USA}
+\address[TTUaddress]{Department of Physics Tennessee Technological University, Cookeville, Tennessee, 38505, USA}
+\address[JINPAaddress]{Joint Institute for Nuclear Physics and Applications, Oak Ridge TN 37831 USA}
+%\address[otheraddress]{Others' Addresses}
+
+
+%% abstract
+\begin{abstract}
+A new high resolution neutron detector concept which time of flight measurements is proposed. Energy resolutions from time of flight measurements are determined by the uncertainty in timing and position. A single NEXT module will be composed of thin segments of neutron-discriminating plastic scintillator, each optically separated, coupled to a position sensitive detector for the readout. The goal of NEXT is to maintain neutron detection efficiency and reduce uncertainties in time of flight energy calculations.
+\end{abstract}
+
+\begin{keyword}
+$\beta$-delayed neutron emission
+\end{keyword}
+
+\end{frontmatter}
+
+
+\linenumbers
+
+\section{Introduction}
+New generation radioactive ion beam facilities enable access to very neutron rich nuclei, approaching, and even reaching the neutron drip-line in certain
+cases.
+Far from stability, neutron separation energies become lower and accessible via beta decay \cite{FRIB}, and neutron spectroscopy becomes increasingly more important to obtain information about the nuclear structure for very neutron-rich nuclei. 
+Neutron dEtector with (X) Tracking (NEXT) has been devoloped to improve neutron spectroscopy energy resolution while still being viable to observe low production rate beta delayed neutron emitters close to the neutron drip line. 
+
+\begin{center}
+{ \color{red} TO BE COMPLETED!}
+\end{center}
+\section{ Detector Design}
+
+When the neutron kinetic  energies are measured via time-of-flight, the energy resolution is given by the following expression \cite{KORNILOV2009226}:
+
+\begin{equation}
+\frac{\Delta E}{E}=\sqrt{\left(\frac{2\Delta t}{t}\right )^2+\left(\frac{2\Delta L}{L}\right )^2},
+\label{eq:resolution}
+\end{equation}
+
+in which $t$  is the time-of-flight of the particle ($\Delta$ t is uncertainty in time-of-flight) and $L$ is the corresponding flight path-length ($\Delta$ L is the uncertainty in neutron path-length). Therefore, the energy resolution is directly related with the time resolution of the detection system, and the precision in the measurement of the path-length. The latter is mainly due the the uncertainty in the determination of the interaction point within the detector. One of the factors which limits this precision is the required thickness facing the trajectory, because the interaction can occur anywhere within the detector. Thick detectors are needed to maintain neutron detection efficiency, but at the expense of a good position resolution. Typical thicknesses for plastic-scintillator-based neutron detectors are about 3~cm, which is a good trade-off between position resolution and efficiency \cite{PETERS2016122,BUTA2000412}.
+
+\subsubsection{Detector Requirements}
+The NEXT detector has to be able to accurately measure neutron energies below 10~MeV. This is the region of interest for beta-delayed neutron emission and single nucleon transfer reactions, in which the neutrons emitted at forward angles in the center of mass frame have low energies\cite{}.  
+
+Figure \ref{fig:resolution} shows how the energy resolution is  affected by the thickness of the detector and the time resolution for a 1~m flight distance using Eq. \eqref{eq:resolution}. We observe that the 3~cm uncertainty in the distance of the existing VANDLE \cite{PETERS2016122} array is the main limitation in the energy resolution of this detector, especially at neutron energies above 2~MeV. Lower detector thicknesses, (3-6~mm) will have lower uncertainty in the determination of the position and  the contribution due to the time resolution becomes more important.
+
+
+\subsection{Conceptual Design}
+
+\begin{figure}[tp]
+\centering
+%\includegraphics[width=0.33\textwidth]{Figures/NEXT_module.eps}
+\includegraphics[width=0.25\textwidth]{Figures/NEXT_modules.eps}
+\caption{Conceptual design  drawings of the two possible geometries of a NEXT module detector. Each  module consists of 8 6-mm thick layers of plastic scintillator, 25~cm long}
+\label{fig:NEXT_modules}
+\end{figure}
+
+
+The NEXT concept is based on modules of 8 multi-layered plastic scintillator detectors. Each  module consists of 8 6-mm-thick layers of plastic scintillator, therefore the total effective thickness is 4.8~cm. Both ends of the scintillator are coupled to position sensitive photosensors for reading out the light produced from scattered particles in the plastic. These photon sensors considered  are either an array of silicon photomultipliers (SiPMs) or flat panel multi anode photomultiplier tubes (MAPMTs). Position sensitivity together with multiple thin layers will makes it possible to determine  accurately the interaction point of the neutrons inside the detector, reducing the uncertainty in the determination of the flight path-length, which together with the sub-nanosecond timing resolution of SiPMs and MAPMTs will improve the energy resolution significantly.
+
+\begin{figure}[tb]
+\centering
+%\includegraphics[width=0.33\textwidth]{Figures/NEXT_module.eps}
+\includegraphics[width=0.48\textwidth]{Figures/Resolution.eps}
+\caption{Energy resolution as a function of the energy of the incoming neutron calculated for different time resolutions and thicknesses for a 1~m distance.}
+\label{fig:resolution}
+\end{figure}
+
+
+
+\input{Simulations}
+
+\input{DetectorTests}
+
+\section{Conclusions}
+After extensive development guided by simulations and single segment tests, a NEXT prototype has been built with 4x8 segmentation. The SensL\textsuperscript{\texttrademark} J-Series SiPMs successfully measured neutron time of flight with less than 600 ps timing resolution, validating SiPMs as potential detectors for future development.
+
+%HERE the BIBLIOGRAPHY
+\section*{References}
+%\nocite{*}
+%\bibliography{mybibfile}
+\bibliography{NEXT_NIM}
+
+\end{document}

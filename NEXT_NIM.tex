@@ -1,0 +1,213 @@
+%\documentclass[review]{elsarticle}
+\documentclass[preprint,3p,twocolumn]{elsarticle}
+\usepackage{lineno,hyperref}
+\usepackage{color}
+\usepackage{amsmath}
+\modulolinenumbers[10]
+
+\journal{NIMA}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Elsevier bibliography styles
+%%%%%%%%%%%%%%%%%%%%%%%
+%% To change the style, put a % in front of the second line of the current style and
+%% remove the % from the second line of the style you would like to use.
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{DRAFT: Conceptual Design of NEXT: a neutron detector with tracking capabilities}
+%\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
+
+
+%% Group authors per affiliation:
+\author[mymainaddress]{D. P\'erez-Loureiro}
+\ead{dperezlo@utk.edu}
+\author[mymainaddress]{J. N. Heideman}
+
+
+\author[mymainaddress,ORNLaddress]{R. Grzywacz\corref{mycorrespondingauthor}}
+\cortext[mycorrespondingauthor]{Corresponding author}
+\ead{rgrzywac@utk.edu}
+
+\author[mymainaddress]{K. Schmitt\fnref{now}}
+\fntext[now]{Present address: Los Alamos National Laboratory, Los Alamos, New Mexico 87545, USA}
+
+\author[TTUaddress]{M. M. Rajabali}
+\author[TTUaddress]{A. R. Engelhardt}
+\author[TTUaddress]{C. W. Howell}
+\author[TTUaddress]{L. D. Mostella}
+\author[TTUaddress]{J. S. Owens}
+\author[TTUaddress]{S. C. Shadrick}
+
+\author[JINPAaddress]{S. Munoz}
+
+
+\author[mymainaddress]{J. Chen}
+
+%\author[otheraddress]{Others}
+
+
+\address[mymainaddress]{Department of Physics and Astronomy,  University of Tennessee, Knoxville, Tennessee , 37996 USA}
+\address[ORNLaddress]{Physics Division, Oak Ridge National Laboratory, Oak Ridge TN 37831 USA}
+\address[TTUaddress]{Department of Physics Tennessee Technological University, Cookeville, Tennessee, 38505, USA}
+\address[JINPAaddress]{Joint Institute for Nuclear Physics and Applications, Oak Ridge TN 37831 USA}
+%\address[otheraddress]{Others' Addresses}
+
+
+%% abstract
+\begin{abstract}
+The NEXT detector  resolution neutron detector array based on time of flight
+measurements. It will be composed of small modules of neutron-discriminating plastic scintillator
+coupled to silicon photomultipliers (SiPMs) for the readout.
+\end{abstract}
+
+\begin{keyword}
+$\beta$-delayed neutron emission
+\end{keyword}
+
+\end{frontmatter}
+
+
+\linenumbers
+
+\section{Introduction}
+Future rare isotope beam facilities, like FRIB, will make it possible to access the very neutron rich
+side of the nuclear landscape, approaching, and even reaching the neutron drip-line in certain
+cases. Far from stability, neutron separation energies become lower and accessible via beta decay \cite{FRIB}.
+Therefore, beta delayed neutron spectroscopy will be an essential method of obtain information
+about the nuclear structure for very neutron-rich nuclei.
+
+\begin{center}
+{ \color{red} TO BE COMPLETED!}
+\end{center}
+\section{ Detector Design}
+
+When the neutron kinetic  energies are measured via time-of-flight, the energy resolution is given by the following expression \cite{KORNILOV2009226}:
+
+\begin{equation}
+\frac{\Delta E}{E}=\sqrt{\left(\frac{2\Delta t}{t}\right )^2+\left(\frac{2\Delta L}{L}\right )^2},
+\label{eq:resolution}
+\end{equation}
+
+in which $t$  is the actual time-of-flight of the particle and $L$ is the corresponding flight path-length. Therefore, the energy resolution is directly related with the time resolution of the detection system, and the precision in the measurement of the path-length. This latter is mainly due the the uncertainty in the determination of the interaction point within the detector. One of the factors which limits this precision is the thickness facing the trajectory, because the interaction can occur anywhere within the detector.  Thickness is also directly related to the intrinsic efficiency: the detector has to be thick to improve the efficiency, but at the expense of a good position resolution. Typical thicknesses for plastic-scintillator-based neutron detectors are about 3~cm, which is a good trade-off between position resolution and efficiency \cite{PETERS2016122,BUTA2000412}.
+
+\subsubsection{Detector Requirements}
+The NEXT detector has to be able to measure the neutron energies in the range between 100~keV to 10~MeV. This is the region of interest for beta-delayed neutron emission and single nucleon transfer reactions, in which the neutrons emitted at forward angles have low energies\cite{}.  
+
+Figure \label{fig:resolution} shows how the energy resolution is  affected by the thickness of the detector and the time resolution for a 1~m flight distance using Eq. \eqref{eq:resolution}. We observe that the 3~cm uncertainty in the distance of the existing VANDLE \cite{PETERS2016122} array is the main limitation in the energy resolution of this detector, especially at neutron energies above 2~MeV. Lower detector thicknesses, (3-6~mm) will have lower uncertainty in the determination of the position and  the contribution due to the time resolution becomes more important.
+
+
+\subsection{Conceptual Design}
+
+\begin{figure}[tp]
+\centering
+%\includegraphics[width=0.33\textwidth]{Figures/NEXT_module.eps}
+\includegraphics[width=0.25\textwidth]{Figures/NEXT_modules.eps}
+\caption{Conceptual design  drawings of the two possible geometries of a NEXT module detector. Each  module consists of 8 6-mm thick layers of plastic scintillator, 25~cm long}
+\label{fig:NEXT_modules}
+\end{figure}
+
+
+The NEXT concept is based on modules of 8 multi-layered plastic scintillator detectors. Each  module consists of 8 6-mm-thick layers of plastic scintillator, therefore the total effective thickness is 4~cm. Both ends of the detector are coupled to position sensitive photosensors for reading out the light produced. These photon sensors considered  are either an array of silicon photomultipliers (SiPMs) or flat panel multi anode photomultiplier tubes (MAPMTs). Position sensitivity together with multiple thin layers will makes it possible to determine  accurately the interaction point of the neutrons inside the detector, reducing the uncertainty in the determination of the flight path-length, which together with the sub-nanosecond timing resolution of SiPMs and MAPMTs will improve the energy resolution significantly.
+
+\begin{figure}[tb]
+\centering
+%\includegraphics[width=0.33\textwidth]{Figures/NEXT_module.eps}
+\includegraphics[width=0.48\textwidth]{Figures/Resolution.eps}
+\caption{Energy resolution as a function of the energy of the incoming neutron calculated for different time resolutions and thicknesses for a 1~m distance.}
+\label{fig:resolution}
+\end{figure}
+
+
+
+\input{Simulations}
+
+\section{Detector tests with radioactive sources}
+To  investigate the timing capabilities of thin scintillator bars, we have measured the coincidence time distribution between two photosensors attached to both ends of plastic scintillators. The output signals produced by light pulses arriving to the SiPMs were amplified using an ORTEC\textsuperscript{\textregistered}  535 fast amplifier module an then sent to the digital Data Acquisition system (DAQ). The DAQ is based on Pixie-16 digitizing modules developed by XIA LLC \cite{XIA} and it digitize the signals by means of 16-bit ADCs at 250 MS/s sampling rate.
+We tested  three types of scintillator materials: regular plastic scintillator EJ-200, pulse-shape-discriminating plastic EJ-276, both manufactured by Eljen Technology \cite{eljen}, and para-terphenyl crystals produced by Proteus \cite{proteus}. 
+
+%\begin{table}[htp]
+%\caption{Properties of EJ-200 and EJ-276 plastic scintillators. Data taken from Ref. \cite{eljen} \label{tab:scint}}
+%\begin{center}
+%\begin{tabular}{p{0.32\linewidth} c c}
+%\hline
+%& EJ-200 &  EJ-276   \\
+%\hline
+%Scintillation Eff. (ph/MeV e-) & 10000 & 8600   \\
+%$\lambda $ of Max. Emission  (nm) & 425 & 425 \\
+%Decay Time (ns) & 	2.1 &  13, 35, 270 (gammas) \\ 
+% & 	 &  13, 59, 460 (neutrons) \\ 
+%\hline
+%\end{tabular}
+%\end{center}
+%\end{table}%
+
+
+\subsection{Position resolution from timing}
+\begin{figure}[hbt]
+\centering
+\includegraphics[width=0.5\textwidth]{Figures/EJ200-SiPMs.eps}
+\caption{Top panels: Two-dimensional scatter plot of the left-right time difference versus the deposited energy for beta particles emitted by a $^{90}$Sr($^{90}$Y)  in EJ-200 plastic scintillator measured with a circuit with on-board amplification (left) and without  it (right). Bottom panels: Projection on the time axis of the  distributions of top panels. The red line corresponds to the gaussian fit used to determine the time resolution.}
+\label{fig:SiPMtiming}
+\end{figure}
+
+In order to determine the position resolution along the detector and timing capabilities, we measured the time difference between two detectors attached to both ends of plastic scintillators. A  common $^{90}$Sr($^{90}$Y) beta source was employed. The time of each digitized pulse was determined by means of a Polynomial Constant Fraction Discrimination  algorithm (PolyCFD) \cite{PhDCory}. The algorithm fits the maximum of the pulse and it calculates from a linear interpolation the point in the leading edge in which the signal reaches a certain percentage of the maximum after baseline subtraction. The optimum values were obtained for a factor range  between $F=40-45\%$.
+
+\begin{figure}[hbt]
+\centering
+\includegraphics[width=0.48\textwidth]{Figures/PolyCFD.eps}
+\caption{Example of the PolyCFD algorithm on a digitized trace. Green line represents the third order polynomial fit of the maximum. Magenta line shown the linear fit, and the blue line the threshold level. The time is determined by the intersection between the magenta and blue lines and it is represented by the red vertical line.}
+\label{fig:PolyCFD}
+\end{figure}
+
+
+
+\subsubsection{Timing with SiPMs}
+Two different electronic circuits were used during these measurements, one with on-board  filtering and amplification and another one without them. The first one consisted of a simple low-pass active filter based on the Texas Instruments\textsuperscript{\textregistered}   OPA656 operational amplifier recommended by the SiPM manufacturer. The feedback resistor value was $25\Omega$. This low resistance makes it possible to maintain the fast rise-time of the SiPM signal, while filtering high-frequency noise. However, further amplification was needed due to the low gain.  The second circuit employed does not have any on-board amplification. The signals produced by the $\beta$-particles impinging onto the scintillator plastic.
+
+
+Figure \ref{fig:SiPMtiming}, shows the results of the timing measurements using a  teflon-wrapped $100\times6\times6$~mm$^3$ piece of EJ-200 plastic scintillator with the two circuits above mentioned. Left panels correspond to the circuit with active amplification and right ones the the circuit with no amplification. The top panels represent  2D-histograms of the left-right time difference  and the deposited energy in the plastic scintillator for a $^{90}$Sr($^{90}$Y) source with on-board amplification (left) and without amplification (right). We observe that the maximum of the energy distribution in the case of the SiPM circuit with amplification is lower than the one without it. This is due to the fact that signals with amplitudes larger than the 1~V-range of the ADCs which will produce and overflow were not included in the histogram. The gain of the amplifier included in the SiPM circuit boards produces the saturation at lower values of deposited energy. It is also worth to mention that the the distribution corresponding to the non amplified circuit shows a significant walk effect compared to the other one.
+
+Lower panels of Fig. \ref{fig:SiPMtiming}, show projections on the time axis of the histograms shown in the upper panel. The time resolution is obtained from  gaussian fits of the time distributions. The resolutions obtained for the non-amplified circuit and the amplified one are $\Delta t=469$~ps (FWHM) , and   $\Delta t=548$~ps (FWHM) respectively.
+
+
+ 
+\subsubsection{Timing with PMTs}
+
+
+\subsection{Time of flight measurements}
+
+As a proof of principle, we measured the time of flight for neutrons produced by a $^{252}$Cf neutron source using a small scale set up. It consists of a $50\times6\times6$~mm$^3$  piece of EJ200 plastic scintillator attached to $6\times6$~mm$2$ SiPMs used as START detector and a  $100\times6\times6$~mm$^3$ scintillator bar attached to another pair of SensL\textsuperscript{\textregistered}  SiPMs used as STOP. Both detectors were placed 30~cm apart. Again, due to the limited gain of the preamplifier circuit, further amplification was added with the ORTEC\textsuperscript{\textregistered}  535 amplifier. 
+\subsubsection{SiPMs}
+The SiPMs used are the  6-mm J-series from SensL\textsuperscript{\textregistered}
+
+
+
+
+\begin{figure}[hbt]
+\centering
+\includegraphics[width=0.5\textwidth]{Figures/ToF_Cf252_Ej200SiPM.eps}
+\caption{Two-dimensional scatter plot of the time of flight versus the deposited energy for gamma-rays and neutrons emitted by a $^{252}$Cf source between two EJ-200 plastic scintillators placed 30~cm apart. An arbitrary offset in the time axis is added. The inset show a projection of the time-of-flight spectrum and the fit to the gamma-ray peak. The wider bump corresponds to the neutrons.}
+\label{fig:ToF_SiPM}
+\end{figure}
+
+
+\subsubsection{PMTs}
+
+\subsection{n-${\mathit \gamma}$ discrimination}
+
+\section{Conclusions}
+%HERE the BIBLIOGRAPHY
+\section*{References}
+%\nocite{*}
+%\bibliography{mybibfile}
+\bibliography{NEXT_NIM}
+
+\end{document}
