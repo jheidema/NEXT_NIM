@@ -67,7 +67,7 @@
 %
 
 
-\section{SiPM Detector Tests}
+\section{Detector tests with radioactive sources}
 
 To  investigate the timing capabilities of thin scintillator bars, we have measured the coincidence time distribution between two photosensors attached to opposite ends of plastic scintillators. The signals from the photodetectors and all subsequent amplification were digitized. The Data Acquisition (DAQ) system utilized 16-bit, 250 MHz Pixie-16 digitizers developed by XIA LLC \cite{XIA} (SHOULD THE CRATE BE MENTIONED).
 We tested two types of scintillator materials: regular plastic scintillator EJ-200, pulse-shape-discriminating plastic EJ-276, both manufactured by Eljen Technology \cite{eljen}. Small $6\times6$ mm\textsuperscript{2} cross-sectional segments of EJ-200 were used to test SiPM performance and bars of EJ-276 were provided in $254\times12.7\times6$ mm$^{3}$ and $127\times12.7\times6$ mm$^{3}$ segments.
@@ -113,18 +113,6 @@ Figure \ref{fig:SiPMtiming}, shows the results of the timing measurements using 
 
 Lower panels of Fig. \ref{fig:SiPMtiming}, show projections on the time axis of the histograms shown in the upper panel. The time resolution is obtained from  gaussian fits of the time distributions. The resolutions obtained for the non-amplified circuit and the amplified one are $\Delta t=469$~ps (FWHM), and $\Delta t=548$~ps (FWHM) respectively.
 
-\subsection{Time of Flight with SiPMs}
-\begin{figure}[hbt]
-  \includegraphics[width=\linewidth]{Figures/ToF_Cf252_Ej200SiPM.eps}
-  \caption{Two-dimensional histogram of $^{252}$Cf time of flight measurements plotted against deposited energy in the EJ-200 stop detector. The inset show a logarithm projection onto the time of flight axis. The timing resolution was determined to be 544~ps from a gaussian fit to the gamma peak.}
-  \label{fig:ToF_SiPM}
-\end{figure}
-
-As a proof of principle, a small scale time-of-flight setup (30~cm flight path) was made to measure neutron energies from a $^{252}$Cf source. It consists of a $20\times6\times6$~mm$^3$  piece of EJ-200 plastic scintillator attached to $6\times6$~mm$^2$ SensL\textsuperscript{\textregistered} SiPMs used as START detector and a  $50\times6\times6$~mm$^3$ scintillator bar attached to another pair of SensL\textsuperscript{\textregistered} SiPMs used as STOP. Both detectors were placed 30~cm apart. Again, due to the limited gain of the preamplifier circuit, further amplification for all SiPM signals was added with the ORTEC\textsuperscript{\textregistered} 535 amplifier. Using the PolyCFD method, the time of flight resolution for the SiPM setup was $\Delta t=544$~ps.
-
-\section{Eljen 276 Detector Tests}
-
- \subsection{Timing Tests}
 \begin{figure}[hbt]
   \centering
   \begin{subfigure}{0.5\linewidth}
@@ -139,9 +127,19 @@ As a proof of principle, a small scale time-of-flight setup (30~cm flight path) 
   \label{fig:MylarTiming}
 \end{figure}
  
+\subsubsection{Timing with PMTs}
 Timing performance of the $254\times12.7\times6$ mm\textsuperscript{3} EJ-276 bars was tested with fast, compact Hamamatsu R11265U PMTs. The bars of EJ-276 were machined from 12.7~mm thick sheets by Agile Technologies, Inc. and wrapped with 3M\textsuperscript{\texttrademark} ESR or Lumirror\textsuperscript{\texttrademark} (produced by Toray). Some bars were also provided with no wrapping to determine the effect of the reflective layers. ESR is a specular reflector with 98\% reflectivity in the visible spectrum and Lumirror\textsuperscript{\texttrademark} is a diffuse reflector. Figure \ref{fig:MylarTiming} shows the 2D-histogram of left-right time difference against the deposited energy in the scintillator and the projection of the timing resolution results with the ESR wrapped EJ-276 bar. From a gaussian fit to the time difference projection the resolution is $\Delta t=543$~ps (FWHM). A thick mylar film on the $^{90}$Sr source caused the energy spectrum to be shifted lower by approximately 500~keV, as seen in the endpoint energy rougly around 1700~keV in Fig. \ref{fig:MylarTiming}.  The Lumirror\textsuperscript{\texttrademark} wrapped detector was not tested for timing due to the poor neutron-gamma discrimination that will be shown in Section \ref{PSDsection}.
 
-%\subsection{Time of flight measurements}
+\subsection{Time of flight measurements}
+
+\begin{figure}[hbt]
+  \includegraphics[width=\linewidth]{Figures/ToF_Cf252_Ej200SiPM.eps}
+  \caption{Two-dimensional histogram of $^{252}$Cf time of flight measurements plotted against deposited energy in the EJ-200 stop detector. The inset show a logarithm projection onto the time of flight axis. The timing resolution was determined to be 544~ps from a gaussian fit to the gamma peak.}
+  \label{fig:ToF_SiPM}
+\end{figure}
+
+%\subsubsection{SiPMs}
+As a proof of principle, a small scale time-of-flight setup (30~cm flight path) was made to measure neutron energies from a $^{252}$Cf source. It consists of a $20\times6\times6$~mm$^3$  piece of EJ-200 plastic scintillator attached to $6\times6$~mm$^2$ SensL\textsuperscript{\textregistered} SiPMs used as START detector and a  $50\times6\times6$~mm$^3$ scintillator bar attached to another pair of SensL\textsuperscript{\textregistered} SiPMs used as STOP. Both detectors were placed 30~cm apart. Again, due to the limited gain of the preamplifier circuit, further amplification for all SiPM signals was added with the ORTEC\textsuperscript{\textregistered} 535 amplifier. Using the PolyCFD method, the time of flight resolution for the SiPM setup was $\Delta t=544$~ps.
 
 \begin{figure}[!htp]
   \centering
@@ -151,7 +149,8 @@ Timing performance of the $254\times12.7\times6$ mm\textsuperscript{3} EJ-276 ba
  \caption{Two-dimensional histogram of $^{252}$Cf time of flight versus deposited energy in the mylar wrapped EJ-276 stop detector. The inset is a projection of the gamma-ray peak in the time of flight spectrum and has a 524~ps FWHM.}
  \label{fig:TOFEJ276}
 \end{figure}
-A time-of-flight setup similar to the SiPM test was made to measure the time of flight resolution for a single 12.5~cm long bar of EJ-276 plastic scintillator wrapped with ESR. Utilizing the same start detctor from the SiPM time of flight setup and the EJ-276 bar coupled to PMTS as the stop detector, the $^{252}$Cf spectrum was measured again. From a fit to the gamma-ray peak in the the time of flight spectrum, the time resolution was determined to be 524~ps.
+%\subsubsection{PMTs}
+A similar time of flight setup was made to measure the time of flight resolution for a single 12.5~cm bar of EJ-276 plastic scintillator wrapped with ESR. Utilizing the same start detctor from the SiPM time of flight setup and the EJ-276 bar coupled to PMTS as the stop detector, the $^{252}$Cf spectrum was measured again. From a fit to the gamma-ray peak in the the time of flight spectrum, the time resolution was determined to be 524~ps.
 
 \begin{figure*}[hbt]
  \centering
@@ -176,7 +175,7 @@ Eljen 276, a derivative of Eljen 299 (EJ-299), has been developed as an extremel
 
 Two wrapped bars from Agile Technologies, Inc. (3M\textsuperscript{\texttrademark} ESR and Lumirror\textsuperscript{\texttrademark}) and a third bare bar wrapped with teflon were tested to measure the effect of the outer reflective layer on the pulse shape discrimination. Using the $^{252}$Cf source and a 2 inch block of lead to attenuate the large gamma-ray flux, the waveforms from each bar were digitized and tail to total integratin ratios were calculated. Figure \ref{fig:PSDEJ276} shows the PSD plots for bars wrapped with Lumirror\textsuperscript{\texttrademark} (a), teflon (b), and ESR (c) with figure of merits being calculated between 400 and 500~keVee. The figure of merits for the Lumirror\textsuperscript{\texttrademark}, teflon, and ESR bars were 0.820$\pm$0.012, 1.042$\pm$0.016, and 0.977$\pm$0.015 respectively [NON CORRECTED]. Future tests of the bar were only done with 3M\textsuperscript{\texttrademark} ESR wrapping to maintain the best neutron-gamma discrimination.
 
-\begin{comment}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
 \subsubsection{SiPM}
 \begin{figure}[htbp]
   \centering
@@ -185,7 +184,7 @@ Two wrapped bars from Agile Technologies, Inc. (3M\textsuperscript{\texttrademar
   \label{fig:SiPMPSD}
 \end{figure}
 SiPMs have a characteristically long decay length without any pre-amplificication. The effect of such a long decay on neutron-gamma discrimination was measured with the ESR-wrapped EJ-276 bar with a single SiPM detector on each end. The signals were digitized and analyzed with the CCM to determine the effect of light detection against detector type. Figure \ref{fig:SiPMPSD} shows the SiPM capabilities to EJ-276 neutron and gamma-ray scintillation.
-\end{comment}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
 
 \section{Prototype} \label{Prototype}
 \begin{figure}[htbp]
