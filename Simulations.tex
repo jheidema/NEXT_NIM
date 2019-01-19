@@ -60,16 +60,14 @@
 
 
 \section{Simulations: NEXT\emph{sim}}
-
-In order to investigate the light collection efficiency as well as the timing capabilites of the different considered geometries, \emph{NEXTsim}, a {\sc Geant4}-based code was developed \cite{AGOSTINELLI2003250,ALLISON2016186}. This code uses  {\sc Geant4} version 10.1 Patch 3 and {\sc Root} files for the output.
-
-\begin{figure*}[hbt]
-\centering
-\includegraphics[width=0.9\textwidth]{Figures/Geometries.eps}
-\caption{Visualization of a 1 Mev neutron event in NEXT\emph{sim} for the three  geometries considered for NEXT. Green lines correspond to optical photons produced in the sctintillation.}
-\label{fig:Geometries}
+\begin{figure*}[htp]
+ \centering
+  \includegraphics[width=0.9\textwidth,trim={3.7cm 0 0 0},clip]{Figures/Geometries.eps}
+  \caption{Visualization of a 1 Mev neutron event in NEXT\emph{sim} for two geometries considered for a NEXT layer. Green lines correspond to optical photons produced in the sctintillation.}
+  \label{fig:Geometries}
 \end{figure*} 
 
+In order to investigate the light collection efficiency as well as the timing capabilites of the different considered geometries, \emph{NEXTsim}, a {\sc Geant4}-based code was developed \cite{AGOSTINELLI2003250,ALLISON2016186}. This code uses  {\sc Geant4} version 10.1 Patch 3 and {\sc Root} files for the output.
 This software simulates the interaction of neutrons, gammas, and charged particles in the matter they traverse. The  physics model (referred as \emph{Physics List} in the {\sc Geant4} context) employed is the recommended QGS\_BERT\_HP, which includes the standard electromagnetic, and the high precision models for neutron scattering, elastic and inelastic, as well as capture and fission.  This model is based on the G4NDL evaluated neutron data library \cite{Apostolakis2009}. I addition to this physics list, the G4OpticalPhysicsList is included to treat the transport of scintillation light as well as the G4RadioactiveDecay to simulate radioactive sources. The generation of the primary particles  was made with the GeneralParticleSource (GPS) module, which allows to define complex beam profiles or source geometries. This module allows to define the primary particle,  spacial and angular distribution, as well as the kinetic energy with simple commands.
  
  All the different geometries considered for the NEXT modules were modeled and simulated (see  Fig.~\ref{fig:Geometries}): hexagons, scintillator bars and elliptical (bars in which the corners were cut in angle to maximize the light focusing in the detector). The user can select between any of the geometries, scintillator, and wrapping materials, as well as the type of photosensor (SiPM or PMT) via macro-driven commands. 
