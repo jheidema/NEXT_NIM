@@ -89,14 +89,14 @@ To  investigate the timing performance of varying detector setups, coincidence t
 
 
 \subsection{High Resolution Timing}
-\begin{figure}[hbt]
+\begin{figure}[bt]
 \centering
 \includegraphics[width=0.48\textwidth]{Figures/PolyCFD.eps}
 \caption{Example of the PolyCFD algorithm on a digitized trace. Green line represents the third order polynomial fit of the maximum. Magenta line shown the linear interpolation, and the blue line the threshold level. The high resolution time is determined by the intersection between the magenta and blue lines and it is represented by the red vertical line.}
 \label{fig:PolyCFD}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[tp]
 \centering
 \includegraphics[width=0.5\textwidth]{Figures/EJ200-SiPMs.eps}
 \caption{Top: Two-dimensional histogram of the left-right time difference versus the deposited energy in EJ-200 plastic scintillator from a $^{90}$Sr source, measured with on-board amplification (left) and without it (right). Bottom: Projection on the time axis of the  distributions of top panels. The red line corresponds to the gaussian fit used to determine the time resolution.}
@@ -112,7 +112,7 @@ A $^{90}$Sr source was employed to measure left-right position resolution becaus
 Silicon Photomultipliers (SiPMs) offer a small form factor solution to detector design. SiPM position and time-of-flight resolution was measured to test their applicability to a small scale array. Two different readout circuits were used during the SiPM measurements, one with on-board filtering and amplification and another one without them.  The first one consisted of a simple low-pass active filter based on the Texas Instruments\textsuperscript{\textregistered} OPA656 operational amplifier recommended by the SiPM manufacturer. The feedback resistor value was chosen to be $25\Omega$ to maintain the fast rise-time of the SiPM signal while filtering high-frequency noise. The second circuit tested does not have any on-board amplification. Pairs of the same SiPM signal readout boards were tested with a teflon-wrapped $50\times6\times6$~mm$^3$ piece of EJ-200 plastic scintillator between them. For each pair, the signals were amplified and gain matched using an ORTEC\textsuperscript{\textregistered} 535 fast amplifier module.
 
 Figure \ref{fig:SiPMtiming} shows the results of the timing measurements using the teflon-wrapped piece of EJ-200 with the two circuits mentioned previously. The left panels correspond to the circuit with active onboard amplification and right ones the the circuit with no onboard amplification. The top panels show 2D-histograms of the left-right time difference and the deposited energy in the plastic scintillator with on-board SiPM amplification (left) and without amplification (right). We observe that the maximum of the energy distribution in the case of the SiPM circuit with amplification is lower than the one without it. This is due to the fact that signals with amplitudes larger than 1~V saturate the ADCs and were not included in the histogram. The gain of the amplifier included in the SiPM circuit boards produces the saturation at lower values of deposited energy. It is also worth to mention that the the distribution corresponding to the non amplified circuit shows a significant walk effect at high energy deposition compared to the amplified board.
-\begin{figure}[ht]
+\begin{figure}[t]
   \includegraphics[width=\linewidth]{Figures/ToF_Cf252_Ej200SiPM.eps}
   \caption{Two-dimensional histogram of $^{252}$Cf time of flight measurements plotted against deposited energy in the EJ-200 stop detector. The inset show a logarithm projection onto the time of flight axis. The timing resolution was determined to be 544~ps from a gaussian fit to the gamma peak.}
   \label{fig:ToF_SiPM}
@@ -123,7 +123,7 @@ Lower panels of Fig. \ref{fig:SiPMtiming}, show projections on the time axis of 
 \subsection{Time of Flight with SiPMs}
 
 As a proof of principle, a small scale time-of-flight setup (30~cm flight path) was made to measure neutron time-of-flight from a $^{252}$Cf source and determine the time-of-flight resolution. The setup consisted of a $20\times6\times6$~mm$^3$  piece of EJ-200 plastic scintillator attached to $6\times6$~mm$^2$ SensL\textsuperscript{\textregistered} SiPMs used as START detector and a  $100\times6\times6$~mm$^3$ scintillator bar attached to another pair of SensL\textsuperscript{\textregistered} SiPMs used as STOP. Both detectors were placed 30~cm apart and the same DAQ was used from the position resolution tests. The time-of-flight vs. deposited energy distribution can be seen in Figure 9, along with a 1-D projection showing the gaussian fit to the gamma-ray peak. Using the PolyCFD method, the time of flight resolution for the SiPM setup was determined to be $\Delta t=544$~ps (FWHM).
-\begin{figure}[hbt]
+\begin{figure}[bt]
   \centering
   \begin{subfigure}{0.5\linewidth}
     \raggedleft
@@ -150,7 +150,7 @@ As a proof of principle, a small scale time-of-flight setup (30~cm flight path) 
 \end{figure}
  
 Timing performance of the $127\times12.7\times6$ mm\textsuperscript{3} EJ-276 bars was tested with fast, compact Hamamatsu R11265U PMTs. The bars of EJ-276 were machined from 12.7~mm thick sheets by Agile Technologies, Inc. and wrapped with 3M\textsuperscript{\texttrademark} ESR or Lumirror\textsuperscript{\texttrademark} (produced by Toray). Some bars were also provided with no wrapping to determine the effect of the reflective layers.
-\begin{figure*}[ht]
+\begin{figure*}[htbp]
  \centering
   \includegraphics[width=0.9\textwidth]{Figures/PSDWrappingComparison.eps}
   \caption{Two dimensional histograms of the CCM PSD of three different types of wrapping. [NON CORRECTED].}
@@ -184,7 +184,7 @@ Two wrapped bars from Agile Technologies, Inc. (3M\textsuperscript{\texttrademar
 ESR wrapped EJ-276 bars were shown to meet NEXT design goals, facilitating the assembly of a 2x2 in$^{2}$ segmented detector array. The array has 4x8 segmentation, the higher segmentation being along the particle flight path (see Figure \ref{fig:PSPMTImage}). A full NEXT module is made up of one segmented array coupled to Hamamatsu H12700A position sensitive PMTs on each end of the array. The H12700A PSPMTs have an 8x8 segmentation (64 6x6 mm$^{2}$ anodes), with each anode having an individual readout. A Vertilon PSPMT Anger Logic interface board (Model SIB064B-1018) was used to reduce the position sensitive readout to 4 position signals. Figure \ref{fig:PSPMTImage} shows the reconstructed array segmentations from the Anger Logic position measurement of the PSPMTs \cite{ANGER}. The common dynode signal used for timing is passed through the interface board directly from the PSPMT. The segement dependent time-of-flight analysis calculates the neutron energies on a segment by segment basis (using the reconstructed positions).
 
 \subsubsection{Time of Flight Measurements}
-\begin{figure}[ht]
+\begin{figure}[t]
   \centering
   \includegraphics[width=0.9\linewidth]{Figures/Cf252_Spectrum_logY.eps}
   \caption{}
@@ -197,7 +197,7 @@ ESR wrapped EJ-276 bars were shown to meet NEXT design goals, facilitating the a
  \label{fig:CollimatedCoToF}
 \end{figure}
 
-\begin{figure}[htp]
+\begin{figure}[t]
   \centering
  \begin{overpic}[scale=.35]{Figures/Prototype_PSD.eps}
  \put(35,35){\includegraphics[scale=.19]{Figures/Prototype_PSD_FOM.eps}}

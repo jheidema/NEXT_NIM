@@ -98,15 +98,7 @@ When the neutron kinetic energies are measured via time-of-flight, the energy re
 \label{eq:resolution}
 \end{equation}
 in which $t$  is the time-of-flight of the particle ($\Delta$t is uncertainty in time-of-flight) and $L$ is the corresponding flight path-length ($\Delta$L is the uncertainty in neutron path-length). Therefore, the energy resolution is directly related with the time resolution of the detection system, and the precision in the measurement of the path-length. The latter is mainly due the the uncertainty in the determination of the interaction point within the active volume of the detector. One of the factors which limits this precision is the required thickness facing the trajectory, because the interaction can occur anywhere within the detector. Thick detectors are needed to maintain neutron detection efficiency, but at the expense of a good position resolution. Typical thicknesses for plastic-scintillator-based neutron detectors are about 3~cm, which is a good trade-off between position resolution and efficiency \cite{PETERS2016122,BUTA2000412}.
-
-Most common plastic scintillator exhibits the same response from gamma-ray scattering as neutron scattering, making the two events indiscernible. In order to correct this behavior, many types of neutron-gamma discriminating scintillators have been developed to improve gamma-ray background rejection in neutron time of flight distributions. By utilizing the slower neutron response as compared to gamma-ray scintillation, background can be rejected using varying pulse shape discrimination methods.
-
-\subsubsection{Detector Requirements}
-
-The design of the NEXT module is a compromise between the necessity to obtain highest possible precision in measurement of position and timing of the neutron and the capabilities of the scintillator material and sensor. The optimal, realistic segmentation has to also warrant sufficiently good light collection in order to retain timing and PSD capabilities. Figure \ref{fig:resolution} shows the dependencies of the  neutron energy resolution on the thickness and timing resolution resulting from implementation of Equation \ref{eq:resolution} for a 1~m neutron flight path. We observe that the 3~cm uncertainty in the distance of the existing VANDLE \cite{PETERS2016122} array is the main limitation in the energy resolution of this detector, especially at neutron energies above 2~MeV.
-
-It is apparent that, for a given $\frac{\Delta L}{L}$, the $\frac{\Delta t}{t}$  should be commensurate, meaning that for a particular timing resolution $\Delta$t, and particular L, there is an minimal segment thickness $\frac{\Delta L}{L}$, beyond which the timing resolution dominates the overall energy resolution. For the typical L=50-100~cm and $\Delta$t=1~ns  timing resolution, the segment thickness should be no more than 10~mm. Thin detectors (3-6~mm) will have lower uncertainty in the determination of the position while the contribution due to the time resolution becoming more important.
-\begin{figure}[htbp]
+\begin{figure}[tp]
 \centering
 %\includegraphics[width=0.33\textwidth]{Figures/NEXT_module.eps}
 \includegraphics[width=0.48\textwidth]{Figures/Resolution.eps}
@@ -115,21 +107,28 @@ It is apparent that, for a given $\frac{\Delta L}{L}$, the $\frac{\Delta t}{t}$ 
 \end{figure}
 
 
+Most common plastic scintillator exhibits the same response from gamma-ray scattering as neutron scattering, making the two events indiscernible. In order to correct this behavior, many types of neutron-gamma discriminating scintillators have been developed to improve gamma-ray background rejection in neutron time of flight distributions. By utilizing the slower neutron response as compared to gamma-ray scintillation, background can be rejected using varying pulse shape discrimination methods.
+
+\subsubsection{Detector Requirements}
+
+The design of the NEXT module is a compromise between the necessity to obtain highest possible precision in measurement of position and timing of the neutron and the capabilities of the scintillator material and sensor. The optimal, realistic segmentation has to also warrant sufficiently good light collection in order to retain timing and PSD capabilities. Figure \ref{fig:resolution} shows the dependencies of the  neutron energy resolution on the thickness and timing resolution resulting from implementation of Equation \ref{eq:resolution} for a 1~m neutron flight path. We observe that the 3~cm uncertainty in the distance of the existing VANDLE \cite{PETERS2016122} array is the main limitation in the energy resolution of this detector, especially at neutron energies above 2~MeV.
+
+It is apparent that, for a given $\frac{\Delta L}{L}$, the $\frac{\Delta t}{t}$  should be commensurate, meaning that for a particular timing resolution $\Delta$t, and particular L, there is an minimal segment thickness $\frac{\Delta L}{L}$, beyond which the timing resolution dominates the overall energy resolution. For the typical L=50-100~cm and $\Delta$t=1~ns  timing resolution, the segment thickness should be no more than 10~mm. Thin detectors (3-6~mm) will have lower uncertainty in the determination of the position while the contribution due to the time resolution becoming more important.
+
 %\begin{center}
 %MERGE WITH ABOVE
 %\end{center}
 %[The NEXT detector has to be able to accurately measure neutron energies below 10~MeV. This is the region of interest for beta-delayed neutron emission and single nucleon transfer reactions, in which the neutrons emitted at forward angles in the center of mass frame have low energies. Figure \ref{fig:resolution} shows how the energy resolution is  affected by the thickness of the detector and the time resolution for a 1~m flight distance using Eq. \eqref{eq:resolution}. We observe that the 3~cm uncertainty in the distance of the existing VANDLE \cite{PETERS2016122} array is the main limitation in the energy resolution of this detector, especially at neutron energies above 2~MeV. Thin detectors (3-6~mm) will have lower uncertainty in the determination of the position and the contribution due to the time resolution becoming more important.]
-
-NEXT will also have to discriminate neutrons from gamma-rays. Scattered gamma-rays present in the experiment hall can coincide with start signals, causing significant background in the neutron time-of-flight spectrum.
-There are several materials for solid scintillators which can provide good neutron-gamma discrimination and good timing, such as stilbene, anthracene, and p-terphenyl. Each of them presently cannot be used as a material for the proposed detector due to limited ability to be machined into segmented array. The recently developed machinable plastic scintilator, Eljen 276 \cite{ZAITSEVA201897}, is a viable base material for the NEXT detector. Developed from Eljen 299, this rigid plastic scintillator can be machined to the desired dimensions of a single detector module. 
-
-\subsection{Detector Concept}
-\begin{figure}[htp]
+\begin{figure}[tp]
   \centering
   \includegraphics[width=\linewidth]{Figures/NExT.pdf}
   \caption{Schematic showing a potential detection configuration for a single NEXT module in a time-of-flight setup. (A) Shown is a top-down view of the detector segmentation along the neutron flight path. (B) shows a side view of the individual segements within the detector, each optically seperated from one another.}
   \label{fig:NEXTschematic}
 \end{figure}
+NEXT will also have to discriminate neutrons from gamma-rays. Scattered gamma-rays present in the experiment hall can coincide with start signals, causing significant background in the neutron time-of-flight spectrum.
+There are several materials for solid scintillators which can provide good neutron-gamma discrimination and good timing, such as stilbene, anthracene, and p-terphenyl. Each of them presently cannot be used as a material for the proposed detector due to limited ability to be machined into segmented array. The recently developed machinable plastic scintilator, Eljen 276 \cite{ZAITSEVA201897}, is a viable base material for the NEXT detector. Developed from Eljen 299, this rigid plastic scintillator can be machined to the desired dimensions of a single detector module. 
+
+\subsection{Detector Concept}
 %\begin{figure}[tp]
 %\centering
 %\includegraphics[width=0.33\textwidth]{Figures/NEXT_module.eps}
@@ -137,6 +136,13 @@ There are several materials for solid scintillators which can provide good neutr
 %\caption{Conceptual design  drawings of the two possible geometries of a NEXT module detector. Each  module consists of 8 6-mm thick layers of plastic scintillator, 25~cm long}
 %\label{fig:NEXT_modules}
 %\end{figure}
+\begin{figure*}[htp]
+ \centering
+  \includegraphics[width=0.9\textwidth,trim={3.7cm 0 0 0},clip]{Figures/Geometries.eps}
+  \caption{Visualization of a 1 Mev neutron event in NEXT\emph{sim} for two geometries considered for a NEXT layer. Green lines correspond to optical photons produced in the sctintillation.}
+  \label{fig:Geometries}
+\end{figure*} 
+
 
 The NEXT array concept is based on multi-layered modules of neutron-gamma discriminating plastic scintillator with a position sensitive photodetectors on both ends of a module. Each module consists of 8 6-mm-thick layers, therefore the total effective thickness is 4.8~cm. Figure \ref{fig:NEXTschematic} shows a possible multi-layered module configuration, with segmentation along the horizontal and vertical directions. The photon sensors considered are either an array of silicon photomultipliers (SiPMs) or flat panel multi anode photomultiplier tubes (MAPMTs). Analysis of the position sensitive photosensor response from detected scintillation light will determine the precise layer in which the neutron scattered, reducing the uncertainy in the neutron flight path-length. The fast timing (sub nanosecond) capabilities of these photosensors will further improve energy resolutions by reducing the time of flight uncertainty. 
 

@@ -60,12 +60,14 @@
 
 
 \section{Simulations: NEXT\emph{sim}}
+\begin{comment}
 \begin{figure*}[htp]
  \centering
   \includegraphics[width=0.9\textwidth,trim={3.7cm 0 0 0},clip]{Figures/Geometries.eps}
   \caption{Visualization of a 1 Mev neutron event in NEXT\emph{sim} for two geometries considered for a NEXT layer. Green lines correspond to optical photons produced in the sctintillation.}
   \label{fig:Geometries}
 \end{figure*} 
+\end{comment}
 
 In order to investigate the light collection efficiency as well as the timing capabilites of the different considered geometries, \emph{NEXTsim}, a {\sc Geant4}-based code was developed \cite{AGOSTINELLI2003250,ALLISON2016186}. This code uses  {\sc Geant4} version 10.1 Patch 3 and {\sc Root} files for the output.
 This software simulates the interaction of neutrons, gammas, and charged particles in the matter they traverse. The  physics model (referred as \emph{Physics List} in the {\sc Geant4} context) employed is the recommended QGS\_BERT\_HP, which includes the standard electromagnetic, and the high precision models for neutron scattering, elastic and inelastic, as well as capture and fission.  This model is based on the G4NDL evaluated neutron data library \cite{Apostolakis2009}. I addition to this physics list, the G4OpticalPhysicsList is included to treat the transport of scintillation light as well as the G4RadioactiveDecay to simulate radioactive sources. The generation of the primary particles  was made with the GeneralParticleSource (GPS) module, which allows to define complex beam profiles or source geometries. This module allows to define the primary particle,  spacial and angular distribution, as well as the kinetic energy with simple commands.
@@ -74,7 +76,7 @@ This software simulates the interaction of neutrons, gammas, and charged particl
 
 For every event, the simulation tracks the incoming particle and registers each interaction in the different layers of matter and stores the information in a \emph{ScintHit} object, which includes position, time and momentum. The collection of hits of each event is stored in a  {\sc Root} \emph{TClonesArray} and then saved in a \emph{Tree}.
 
-\begin{figure}[hbt]
+\begin{figure}[bt]
 \centering
 \includegraphics[width=0.48\textwidth]{Figures/LightCollectionEfficiency.eps}
 \caption{Scatter plot of the simulation  light collection efficiency as a function of the deposited energy by 1 MeV neutrons for the tree geometries considered for NEXT modules.}
@@ -95,7 +97,7 @@ The signals produced by the scintillation light in the detectors were  also adde
 
 We have simulated the time of flight spectrum of 1~MeV neutrons impinging onto 10-cm-long plastic scintillator bars in order to determine their timing resolution. Geometrical cross-sections of $6 \times 6$, $3 \times 3$, and $1 \times 1$ $mm^{2}$ were simulated in order to determine the effect of cell width on the measured time resolution. SiPM sensitive surfaces were used for each test. Figure \ref{fig:ToF} shows that an increase in the thickness of the scintillator bar results in an overall broadening of the (average photon arrival time???) resulting in FWHM resolutions of (???) ns for the $1~mm$ bar, (???) ns for the $3~mm$ bar, and (???) ns for the $6~mm$ bar.
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.48\textwidth]{Figures/ToF.eps}
 \caption{Distribution of the time of flight for a pencil beam  placed 20 cm away from the detector of 1MeV  neutrons impinging onto different thicknesses scintillators.}
@@ -104,7 +106,7 @@ We have simulated the time of flight spectrum of 1~MeV neutrons impinging onto 1
 
 For another test, scintillator plates with cross-sections $6 \times 6$, $3 \times 6$, and $1 \times 6$ $mm^{2}$ and standard $6 \times 6$ $mm^{2}$ SiPM sensitive surfaces on each end were bombarded with a pencil beam of 50,000 $1~MeV$ neutrons traversing a distance of $1~m$. The light response of each plate is computed as in section \ref{sec:photosensorResponse} and the neutron time-of-flight (ToF) is computed as the average of the arrival time of the light pulse for the left and right PMTs. Figure \ref{fig:plateTOF} shows the normalized ToF distributions for each plate overlayed on one another. When a more realistic detector light-response is taken into account, the differences in resolution due to the various widths of the plates are completely washed out by the overall detector time resolution. The FWHM time resolution for the three different plates are all within about $20~ps$ of one another and average to approximately $583~ps$ for the beam of $1~MeV$ neutrons. As expected, the detection efficiency of each of the plates scales linearly with its thickness (i.e. the efficiency of the $6 \times 6$ plate is two times larger than the $3 \times 6$ plate which, in turn, is three times larger than the $1 \times 6$. This means that in addition to posessing twelve times greater efficiency, the $6 \times 6$ plate exhibits approximately the same detector time resolution as the $1 \times 6$.
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.48\textwidth]{Figures/plateTOF.pdf}
 \caption{Distribution of the time of flight for a pencil beam of $1~MeV$ neutrons impinging on scintillator plates $1~m$ away. Normalized ToF distributions are shown for $10~cm$ plates with geometric cross-sections of $6 \times 6$ (blue), $3 \times 6$ (red), and $1 \times 6$ (green).}
@@ -117,7 +119,7 @@ Investigating neutron back scattering is very important in a multi-layered detec
 
 We employed the \emph{NEXTsim} code to evaluate the probability of backscattering in different layers of the detector after 2, 3 and 4 scattering events in the detectors for neutron energies between 100~keV and 5~MeV. The simulation tracks the neutron while traversing the detector layers and we count a backscattering event if the difference between the final and initial layers is negative. Figure  \ref{fig:backscattering} shows the result of the position difference in layers obtained the simulation for a 2~MeV neutron pencil beam. We observe that the probability of backscattering is lower than 5\% after a single scatter. This probability is below 12\% even after several scatters. Figure  
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=0.48\textwidth]{Figures/Backscattering2MeV_NEXT.eps}
 \caption{Layer difference between the second (blue) and last (red) scattering events within the NEXT detector for a 2 MeV incident neutron.}
