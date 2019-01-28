@@ -128,10 +128,10 @@ The small scale SiPM timing tests establish SiPMs as viable detectors for small 
  \subsection{Timing Tests with PMTs}
 \begin{figure}[tp]
   \centering
- \begin{overpic}[scale=.35]{Figures/ToFvsEdep_Eljen276_Cf252.eps}
- \put(35,40){\includegraphics[scale=.18]{Figures/ToF_EJ276.eps}}
+ \begin{overpic}[scale=.4]{Figures/EJ276SingleBar_ToFvsEdep_Cf252.eps}
+ \put(40,25){\includegraphics[scale=.224, trim={1cm 0 1.5cm 1cm}, clip]{Figures/EJ276SingleBar_ToF_Cf252.eps}}
  \end{overpic}
- \caption{Two-dimensional histogram of $^{252}$Cf time of flight versus deposited energy in the mylar wrapped EJ-276 stop detector. The inset is a projection of the gamma-ray peak in the time of flight spectrum and has a 524~ps FWHM.}
+ \caption{Two-dimensional histogram of $^{252}$Cf time of flight versus deposited energy in the mylar wrapped EJ-276 stop detector. The inset is a projection of the gamma-ray peak in the time of flight spectrum and has a 538~ps FWHM [50 keVee threshold].}
  \label{fig:TOFEJ276}
 \end{figure}
  
@@ -143,37 +143,40 @@ Timing performance of the $127\times12.7\times6$ mm\textsuperscript{3} EJ-276 ba
   \label{fig:PSDEJ276}
 \end{figure*}
 ESR is a specular reflector with 98\% reflectivity in the visible spectrum and Lumirror\textsuperscript{\texttrademark} is a diffuse reflector. Figure \ref{fig:MylarTiming} shows the 2D-histogram of left-right time difference against the deposited energy in the scintillator and the projection of the timing resolution results with the ESR wrapped EJ-276 bar. From a gaussian fit to the time difference projection the resolution is $\Delta t=543$~ps (FWHM). A thick mylar film on the $^{90}$Sr source caused the energy spectrum to be compressed by approximately 500~keV, as seen in the endpoint energy rougly around 1700~keV in Fig. \ref{fig:MylarTiming}.  The Lumirror\textsuperscript{\texttrademark} wrapped detector was not tested for timing due to the poor neutron-gamma discrimination that will be shown in Section \ref{PSDsection}.
-
-A time-of-flight setup similar to the SiPM test was made to measure the time of flight resolution for a single 127~mm long bar of EJ-276 plastic scintillator wrapped with ESR. Utilizing the same start detctor from the SiPM time of flight setup and the EJ-276 bar coupled to PMTS as the stop detector, the $^{252}$Cf spectrum was measured again. From a fit to the gamma-ray peak in the the time of flight spectrum, the time resolution was determined to be 524~ps.
+A time-of-flight setup similar to the SiPM test was made to measure the time of flight resolution for a single 127~mm long bar of EJ-276 plastic scintillator wrapped with ESR. Utilizing the same start detctor from the SiPM time of flight setup and the EJ-276 bar coupled to PMTS as the stop detector, the $^{252}$Cf spectrum was measured again. From a fit to the gamma-ray peak in the the time of flight spectrum, the time resolution was determined to be 538~ps [50keVee threshold applied].
 
 \subsection{n-${\mathit \gamma}$ discrimination} \label{PSDsection}
 EJ-276 evolved from first-generation neutron-gamma discriminating plastic scintillator, EJ-299. Typical scintillators are cast in specific molds, limiting detector designs. EJ-276 is capable of being cut and polished in desired geometries to optimize detector light collection. The pulse shape discrimination response of EJ-276 is the same as EJ-299 with a slower neutron response decay than the gamma-ray response. The PSD response mechanism for EJ-299 can be found accurately described in \cite{Zaitseva2012}. The materials response to neutron and gamma-ray scattering was tested for the long narrow segments with different wrappings.
+
+\begin{figure}[!ht]
+  \centering
+ \begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.75\linewidth]{Figures/PrototypePositionMap.eps}
+ \end{subfigure}%
+  \\
+ \begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.65\linewidth]{Figures/Prototype_Segmentation.jpg}
+ \end{subfigure}%
+  \caption{Shown is the position of scintillation within the segmented array, reconstructed using the position sensitive signals from the Vertilon Interface board. The source was located in the +X direction from the detector.}
+  \label{fig:PSPMTImage}
+\end{figure}
+
 \subsubsection{Wrapping Tests}
  The neutron and gamma-ray responses from EJ-276 were recorded with the same 16 bit 250 MHz digitizer used for earlier setups, and the pulse shape discrimination was tested using the Charge Comparison Method \cite{CCMPSD}. This method was figured to be the most optimal when using a high bit-resolution digitizer \cite{HighResPSD}.
 Two wrapped bars from Agile Technologies, Inc. (3M\textsuperscript{\texttrademark} ESR and Lumirror\textsuperscript{\texttrademark}) and a third bare bar wrapped with teflon were tested to measure the effect of the outer reflective layer on the pulse shape discrimination. Using the $^{252}$Cf source and a 2 inch block of lead to attenuate the large gamma-ray flux, the waveforms from each bar were digitized and tail to total integratin ratios were calculated. Figure \ref{fig:PSDEJ276} shows the PSD plots for bars wrapped with Lumirror\textsuperscript{\texttrademark} (a), teflon (b), and ESR (c) with figure of merits being calculated between 400 and 500~keVee. The figure of merits for the Lumirror\textsuperscript{\texttrademark}, teflon, and ESR bars were 0.820$\pm$0.012, 1.042$\pm$0.016, and 0.977$\pm$0.015 respectively. Future tests of the bar were only done with 3M\textsuperscript{\texttrademark} ESR wrapping to maintain the best neutron-gamma discrimination.
 
 \section{Prototype} \label{Prototype}
 
-\begin{figure}[ht]
-  \begin{subfigure}{0.5\linewidth}
-%    \raggedleft
-  \includegraphics[width=\linewidth]{Figures/PrototypePositionMap.eps}
- \end{subfigure}%
-  \begin{subfigure}{0.5\linewidth}
- %   \raggedright
-  \includegraphics[width=\linewidth]{Figures/Prototype_Segmentation.jpg}
- \end{subfigure}%
-  \caption{Shown is the position of scintillation within the segmented array, reconstructed using the position sensitive signals from the Vertilon Interface board. The source was located in the +X direction from the detector.}
-  \label{fig:PSPMTImage}
-\end{figure}
-
 ESR wrapped EJ-276 bars were shown to meet NEXT design goals, facilitating the assembly of a 2x2 in$^{2}$ segmented detector array. The array has 4x8 segmentation, the higher segmentation being along the particle flight path (see Figure \ref{fig:PSPMTImage}). A full NEXT module is made up of one segmented array coupled to Hamamatsu H12700A position sensitive PMTs on each end of the array. The H12700A PSPMTs have an 8x8 segmentation (64 6x6 mm$^{2}$ anodes), with each anode having an individual readout. A Vertilon PSPMT Anger Logic interface board (Model SIB064B-1018) was used to reduce the position sensitive readout to 4 position signals. Figure \ref{fig:PSPMTImage} shows the reconstructed array segmentations from the Anger Logic position measurement of the PSPMTs \cite{ANGER}. The common dynode signal used for timing is passed through the interface board directly from the PSPMT. The segement dependent time-of-flight analysis calculates the neutron energies on a segment by segment basis (using the reconstructed positions).
 
 \subsubsection{Time of Flight Measurements}
 \begin{figure}[tp]
  \centering
- \includegraphics[width=0.9\linewidth]{Figures/CollimatedCo60_PrototypeToF.eps}
- \caption{NEXT prototype time of flight resolution using a collimated $^{60}$Co source at a flight distance of 439.7~mm. The gaussian fit to the distribution shows the time resolution (FWHM) is 548~ps. No position dependent correction or cut has been applied to the distribution. The time interval for a gamma-ray to cross the detector is negligible compared to the time resolution of the DAQ.}
+% \includegraphics[width=0.9\linewidth]{Figures/CollimatedCo60_PrototypeToF.eps}
+ \includegraphics[width=0.9\linewidth]{Figures/CollimatedCo60_PrototypeToF_MiddleSegment.eps}
+ \caption{Time of flight resolution or a single NEXT prototype column using a collimated $^{60}$Co source at a flight distance of 439.7~mm. The gaussian fit to the distribution shows the time resolution (FWHM) is 543~ps. [30 keVee threshold]}
  \label{fig:CollimatedCoToF}
 \end{figure}
 \begin{figure}[tb]
@@ -193,7 +196,7 @@ ESR wrapped EJ-276 bars were shown to meet NEXT design goals, facilitating the a
  \label{fig:PSPMTPSD}
 \end{figure}
 
-To measure the full prototype time of flight resolution, a collimated $^{60}$Co source was used. Figure \ref{fig:CollimatedCoToF} shows the time of flight distribution for the entire prototype. From a gaussian fit to the distribution, the time of flight resolution is $\Delta$t=548~ps. Once the prototype was estalished to have high resolution timing, a proof-of-principle neutron energy measurement was made using the $^{252}$Cf source. The source was placed at a distance of 439.7~mm from the front face of the prototype. The neutron yield shown in Figure \ref{fig:Cf252Spectrum} was calculated using time-of-flight information and a neutron gate has been applied using the PSD information shown in Figure \ref{fig:PSPMTPSD}.  
+To measure the full prototype time of flight resolution, a collimated $^{60}$Co source was used. Figure \ref{fig:CollimatedCoToF} shows the time of flight distribution for the entire prototype. From a gaussian fit to the distribution, the time of flight resolution is $\Delta$t=543~ps [30 keVee threshold]. Once the prototype was estalished to have high resolution timing, a proof-of-principle neutron energy measurement was made using the $^{252}$Cf source. The source was placed at a distance of 439.7~mm from the front face of the prototype. The neutron yield shown in Figure \ref{fig:Cf252Spectrum} was calculated using time-of-flight information and a neutron gate has been applied using the PSD information shown in Figure \ref{fig:PSPMTPSD}.  
 
 \subsubsection{neutron-gamma discrimination}
 The PSPMT response is different then that of the fast timing PMTs used to initially test EJ-276. This response affects the overall pulse shape, potentially affecting the pulse shape discrimination capabilities. The dynode signals contain the pulse shape discrimination information. The four position signals lose neutron-gamma information after passing through the resistive network. Figure \ref{fig:PSPMTPSD} shows the neutron-gamma discrimination using the CCM. Using the same energy cuts from the wrapping tests, the FOM is 1.070$\pm$0.016. The NEXT protype does not show any noticeable affect on neutron-gamma discrimination due to segmentation or multi-anode readout.

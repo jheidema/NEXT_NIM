@@ -1,63 +1,3 @@
-%%\documentclass[review]{elsarticle}
-%\documentclass[preprint,3p,twocolumn]{elsarticle}
-%\usepackage{lineno,hyperref}
-%\usepackage{color}
-%\usepackage{amsmath}
-%\modulolinenumbers[10]
-%
-%\journal{NIMA}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Elsevier bibliography styles
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%% To change the style, put a % in front of the second line of the current style and
-%%% remove the % from the second line of the style you would like to use.
-%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%%% `Elsevier LaTeX' style
-%\bibliographystyle{elsarticle-num}
-%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%\begin{document}
-%
-%\begin{frontmatter}
-%
-%\title{DRAFT: NEXT\emph{sim}: Simulating a neutron detector with tracking capabilities}
-%%\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
-%
-%
-%%% Group authors per affiliation:
-%\author[mymainaddress]{D. P\'erez-Loureiro}
-%\ead{dperezlo@utk.edu}
-%
-%
-%\author[mymainaddress]{K. Schmitt\fnref{now}}
-%\fntext[now]{Present address: Los Alamos National Laboratory, Los Alamos, New Mexico 87545, USA}
-%
-%
-%%\author[otheraddress]{Others}
-%
-%
-%\address[mymainaddress]{Department of Physics and Astronomy,  University of Tennessee, Knoxville, Tennessee , 37996 USA}
-%%\address[otheraddress]{Others' Addresses}
-%
-%
-%%% abstract
-%\begin{abstract}
-%The NEXT detector  resolution neutron detector array based on time of flight
-%measurements. It will be composed of small modules of neutron-discriminating plastic scintillator
-%coupled to silicon photomultipliers (SiPMs) for the readout.
-%\end{abstract}
-%
-%\begin{keyword}
-%$\beta$-delayed neutron emission
-%\end{keyword}
-%
-%\end{frontmatter}
-%
-%
-%\linenumbers
-
 
 \section{Simulations: NEXT\emph{sim}}
 \begin{comment}
@@ -69,33 +9,33 @@
 \end{figure*} 
 \end{comment}
 
-In order to investigate the light collection efficiency as well as the timing capabilites of the different considered geometries, \emph{NEXTsim}, a {\sc Geant4}-based code was developed \cite{AGOSTINELLI2003250,ALLISON2016186}. This code uses  {\sc Geant4} version 10.1 Patch 3 and {\sc Root} files for the output.
+In order to investigate the light collection efficiency as well as the timing capabilites of the different considered geometries, \emph{NEXTsim}, a {\sc Geant4}-based code was developed \cite{AGOSTINELLI2003250,ALLISON2016186}. This code uses  {\sc Geant4} version 10.1 Patch 3 and outputs to {\sc Root} files for further analysis.
 This software simulates the interaction of neutrons, gammas, and charged particles in the matter they traverse. The  physics model (referred as \emph{Physics List} in the {\sc Geant4} context) employed is the recommended QGS\_BERT\_HP, which includes the standard electromagnetic, and the high precision models for neutron scattering, elastic and inelastic, as well as capture and fission.  This model is based on the G4NDL evaluated neutron data library \cite{Apostolakis2009}. In addition to this physics list, the G4OpticalPhysicsList is included to treat the transport of scintillation light as well as the G4RadioactiveDecay to simulate radioactive sources. The generation of the primary particles  was made with the GeneralParticleSource (GPS) module, which allows to define complex beam profiles or source geometries. This module allows to define the primary particle,  spacial and angular distribution, as well as the kinetic energy with simple commands.
  
  Different geometries considered for the NEXT modules were modeled and simulated (see  Fig.~\ref{fig:Geometries}), e.g. rectangular bars and elliptical bars (bars in which the corners were cut in angle to maximize the light focusing in the detector). The user can select between any of the geometries, scintillator, and wrapping materials via macro-driven commands.
 
 For every event, the simulation tracks the incoming particle and registers each interaction in the different layers of matter and stores the information in a \emph{ScintHit} object, which includes position, time and momentum. The collection of hits of each event is stored in a  {\sc Root} \emph{TClonesArray} and then saved in a \emph{Tree}.
 
-\begin{figure}[bt]
-\centering
-\includegraphics[width=0.48\textwidth]{Figures/LightCollectionEfficiency.eps}
-\caption{Scatter plot of the simulation  light collection efficiency as a function of the deposited energy by 1 MeV neutrons for the tree geometries considered for NEXT modules.}
-\label{fig:Efficiency}
-\end{figure}
+%\begin{figure}[bt]
+% \centering
+% \includegraphics[width=0.48\textwidth]{Figures/LightCollectionEfficiency.eps}
+% \caption{Scatter plot of simulated light collection efficiency as a function of the deposited energy by 1 MeV neutrons for the two different geometries shown in Figure \ref{fig:Geometries}.}
+% \label{fig:Efficiency}
+%\end{figure}
 
 In addition, the code is also able to simulate the scintillation process induced by the scattered particles in it. All the optical photons produced are then tracked until they are detected or absorbed. For each detected photon, their positions and arrival times are recorded in  a \emph{OptPhotonHit} and the hit collection is saved in the same  \emph{Tree} as the emph{ScintHits}.
 
 \subsection{Simulation of light collection efficency}
 
-The different geometries considered for the NEXT detector were simulated in order to determine the light collection efficiency. Figure \ref{fig:Efficiency} shows the results of the light collection efficiency, calculated as the ratio between detected and produced photons, as a function of the energy deposited in the scintillator. In this case the photosensors are considered ideal and every photon hitting the sensitive surface will be detected. We observe that the rectangular geometries have efficiencies close to 50\% on average. The efficiency of the elliptical shape is higher and it reaches up to 68\% due to the focusing effect towards the photosensors.
+The different geometries considered for the NEXT detector was simulated in order to determine the light collection efficiency. Figure \ref{fig:Efficiency} shows the results of the light collection efficiency, calculated as the ratio between detected and produced photons, as a function of the energy deposited in the scintillator. In this case the photosensors are considered ideal and every photon hitting the sensitive surface will be detected. We observe that the rectangular geometries have efficiencies close to 50\% on average. The efficiency of the elliptical shape is higher and it reaches up to 68\% due to the focusing effect towards the photosensors.
 
 \subsection{Simulation of photosensor response} \label{sec:photosensorResponse}
 
-The signals produced by the scintillation light in the detectors were  also added  to the simulations. The Single Photo Electron (SPE) response function of the photosensors were modeled and then folded with the optical photon distribution to obtain a realistic signal. The SPE functions for SiPMs and PMTs were  taken from the  Refs. \cite{,Choong2009} respectively. The total response is the sum of the SPEs of each photon arriving at the photo-sensor weighted by the gain of the anode which it struck. The resultant light-response pulse is then given a baseline, electrical noise, and is then ``digitized" by placing it into discrete bins on the y-axis (e.g. from 0 to 65535 to represent a 16-bit digitizer) and discrete time bins on the x-axis (e.g. 4 ns for a 250 MSPS system). The digitized pulses are then integrated to obtain the representative light of the event and are processed with a polynomial constant fraction discrimination algorithm (PolyCFD) \cite{PhDCory} as discussed in section \ref{sec:timingWithSiPMs}. The PolyCFD algorithm computes a time for each pulse which represents the time-of-flight of the incident neutron aggregated from all collected photons. 
+The signals produced by the scintillation light in the detectors were  also added  to the simulations. The Single Photo Electron (SPE) response function of the photosensors were modeled and then folded with the optical photon distribution to obtain a realistic photomultiplier signal. The SPE functions for SiPMs and PMTs were  taken from the  Refs. \cite{,Choong2009} respectively. The total response is the sum of the SPEs of each photon arriving at the photo-sensor weighted by the gain of the anode which it struck. The resultant light-response pulse is then given a baseline, electrical noise, and is then ``digitized" by placing it into discrete bins on the y-axis (e.g. from 0 to 65535 to represent a 16-bit digitizer) and discrete time bins on the x-axis (e.g. 4 ns for a 250 MSPS system). The digitized pulses are then integrated to obtain the representative light of the event and are processed with a polynomial constant fraction discrimination algorithm (PolyCFD) \cite{PhDCory} as discussed in section \ref{sec:timingWithSiPMs}. The PolyCFD algorithm computes a time for each pulse which represents the time-of-flight of the incident neutron aggregated from all collected photons. 
 
 \subsection{Simulation of time of flight resolution of the detector}
 
-We have simulated the time of flight spectrum of 1~MeV neutrons impinging onto 10-cm-long plastic scintillator bars in order to determine their timing resolution. Geometrical cross-sections of $6 \times 6$, $3 \times 3$, and $1 \times 1$ $mm^{2}$ were simulated in order to determine the effect of cell width on the measured time resolution. SiPM sensitive surfaces were used for each test. Figure \ref{fig:ToF} shows that an increase in the thickness of the scintillator bar results in an overall broadening of the (average photon arrival time???) resulting in FWHM resolutions of (???) ns for the $1~mm$ bar, (???) ns for the $3~mm$ bar, and (???) ns for the $6~mm$ bar.
+We have simulated the time of flight spectrum of 1~MeV neutrons impinging onto 10-cm-long plastic scintillator bars in order to determine their timing resolution. Geometrical cross-sections of $6 \times 6$~mm$^{2}$, $3 \times 3$~mm$^{2}$, and $1 \times 1$~mm$^{2}$ were simulated in order to determine the effect of cell width on the measured time resolution. SiPM sensitive surfaces were used for each test. Figure \ref{fig:ToF} shows that an increase in the thickness of the scintillator bar results in an overall broadening of the time of flight resolution.
 
 \begin{figure}[tb]
 \centering
@@ -104,12 +44,12 @@ We have simulated the time of flight spectrum of 1~MeV neutrons impinging onto 1
 \label{fig:ToF}
 \end{figure}
 
-For another test, scintillator plates with cross-sections $6 \times 6$, $3 \times 6$, and $1 \times 6$ $mm^{2}$ and standard $6 \times 6$ $mm^{2}$ SiPM sensitive surfaces on each end were bombarded with a pencil beam of 50,000 $1~MeV$ neutrons traversing a distance of $1~m$. The light response of each plate is computed as in section \ref{sec:photosensorResponse} and the neutron time-of-flight (ToF) is computed as the average of the arrival time of the light pulse for the left and right PMTs. Figure \ref{fig:plateTOF} shows the normalized ToF distributions for each plate overlayed on one another. When a more realistic detector light-response is taken into account, the differences in resolution due to the various widths of the plates are completely washed out by the overall detector time resolution. The FWHM time resolution for the three different plates are all within about $20~ps$ of one another and average to approximately $583~ps$ for the beam of $1~MeV$ neutrons. As expected, the detection efficiency of each of the plates scales linearly with its thickness (i.e. the efficiency of the $6 \times 6$~mm$^2$ plate is two times larger than the $3 \times 6$~mm$^2$ plate which, in turn, is three times larger than the $1 \times 6$~mm$^2$. This means that in addition to posessing twelve times greater efficiency, the $6 \times 6$~mm$^2$ plate exhibits approximately the same detector time resolution as the $1 \times 6$~mm$^2$.  
+For another test, scintillator plates with cross-sections $6 \times 6$~mm$^{2}$, $3 \times 6$~mm$^{2}$, and $1 \times 6$ mm$^{2}$ and standard $6 \times 6$~mm$^{2}$ SiPM sensitive surfaces on each end were bombarded with a pencil beam of 50,000 $1~MeV$ neutrons traversing a distance of $1~m$. The light response of each plate is computed as in section \ref{sec:photosensorResponse} and the neutron time-of-flight (ToF) is computed as the average of the arrival time of the light pulse for the left and right PMTs. Figure \ref{fig:plateTOF} shows the normalized ToF distributions for each plate overlayed on one another. When a more realistic detector light-response is taken into account, the differences in resolution due to the various widths of the plates are completely washed out by the overall detector time resolution. The FWHM time resolution for the three different plates are all within about $20~ps$ of one another and average to approximately $583~ps$ for the beam of $1~MeV$ neutrons. As expected, the detection efficiency of each of the plates scales linearly with its thickness (i.e. the efficiency of the $6 \times 6$~mm$^2$ plate is two times larger than the $3 \times 6$~mm$^2$ plate which, in turn, is three times larger than the $1 \times 6$~mm$^2$. This means that in addition to posessing twelve times greater efficiency, the $6 \times 6$~mm$^2$ plate exhibits approximately the same detector time resolution as the $1 \times 6$~mm$^2$.  
 
 \begin{figure}[tb]
 \centering
 \includegraphics[width=0.48\textwidth]{Figures/plateTOF.pdf}
-\caption{Distribution of the time of flight for a pencil beam of $1~MeV$ neutrons impinging on scintillator plates $1~m$ away. Normalized ToF distributions are shown for $10~cm$ plates with geometric cross-sections of $6 \times 6$ (blue), $3 \times 6$ (red), and $1 \times 6$ (green).}
+\caption{Distribution of the time of flight for a pencil beam of $1~MeV$ neutrons impinging on scintillator plates $1~m$ away. Normalized ToF distributions are shown for $10~cm$ plates with geometric cross-sections of $6 \times 6$~mm$^{2}$ (blue), $3 \times 6$~mm$^{2}$ (red), and $1 \times 6$~mm$^{2}$ (green).}
 \label{fig:plateTOF}
 \end{figure}
 Based on this result, it was decided that the minimum tile thickness of a prototype should be 6~mm; thinner tiles would not provide any further benefit due to the timing resolution limit of the data acquisition system.
@@ -118,7 +58,7 @@ Based on this result, it was decided that the minimum tile thickness of a protot
 
 Investigating neutron back scattering is very important in a multi-layered detector like NEXT. If a neutron is backscattered to a previous layer this may lead to a wrong determination  of the neutron kinetic energy 
 
-We employed the \emph{NEXTsim} code to evaluate the probability of backscattering in different layers of the detector after 2, 3 and 4 scattering events in the detectors for neutron energies between 100~keV and 5~MeV. The simulation tracks the neutron while traversing the detector layers and we count a backscattering event if the difference between the final and initial layers is negative. Figure  \ref{fig:backscattering} shows the result of the position difference in layers obtained the simulation for a 2~MeV neutron pencil beam. The probability of backscattering is lower than 5\% after a single scatter and after several scatters within the detector volume the probability below 12\%. The effect of backscattering on neutron energy resolutions should be negligible in event reconstruction.
+We employed the \emph{NEXTsim} code to evaluate the probability of backscattering in different layers of the detector after 2, 3 and 4 scattering events in the detectors for neutron energies between 100~keV and 5~MeV. The simulation tracks the neutron while traversing the detector layers and we count a backscattering event if the difference between the final and initial layers is negative. Figure  \ref{fig:backscattering} shows the result of the position difference in layers obtained the simulation for a 2~MeV neutron pencil beam. The probability of backscattering is lower than 5\% after a single scatter and after several scatters within the detector volume the probability below 12\%. The effect of backscattering on neutron energy resolutions should therefore be negligible in event reconstruction.
 
 \begin{figure}[tb]
 \centering

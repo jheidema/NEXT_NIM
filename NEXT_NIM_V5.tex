@@ -25,7 +25,7 @@
 
 \begin{frontmatter}
 
-\title{DRAFT: Conceptual design of a new neutron detector with neutron localization capabilities}
+\title{Conceptual design of a new neutron detector with neutron localization capabilities}
 %\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
 
 
@@ -37,11 +37,12 @@
 \author[mymainaddress,ORNLaddress]{R. Grzywacz\corref{mycorrespondingauthor}}
 \cortext[mycorrespondingauthor]{Corresponding author}
 \ead{rgrzywac@utk.edu}
-\author[mymainaddress]{C. R. Thornsberry}
-
-\author[mymainaddress]{K. Schmitt\fnref{now}}
-\fntext[now]{Present address: Los Alamos National Laboratory, Los Alamos, New Mexico 87545, USA}
+\author[mymainaddress]{J. Chen}
+\author[UTKNEaddress]{L. H. Heilbronn}
 \author[mymainaddress]{S. K. Neupane}
+\author[mymainaddress]{K. Schmitt\fnref{now}}
+ \fntext[now]{Present address: Los Alamos National Laboratory, Los Alamos, New Mexico 87545, USA}
+\author[mymainaddress]{C. R. Thornsberry}
 
 \author[TTUaddress]{M. M. Rajabali}
 \author[TTUaddress]{A. R. Engelhardt}
@@ -49,11 +50,11 @@
 \author[TTUaddress]{L. D. Mostella}
 \author[TTUaddress]{J. S. Owens}
 \author[TTUaddress]{S. C. Shadrick}
-\author[UTKNEaddress]{L. H. Heilbronn}
+
 \author[JINPAaddress]{S. Munoz}
 
 
-\author[mymainaddress]{J. Chen}
+
 
 %\author[otheraddress]{Others}
 
@@ -110,7 +111,7 @@ in which $t$  is the time-of-flight of the particle ($\Delta$t is uncertainty in
 \end{figure}
 
 
-Most common plastic scintillator exhibits the same response from gamma-ray scattering as neutron scattering, making the two events indiscernible. In order to correct this behavior, many types of neutron-gamma discriminating scintillators have been developed to improve gamma-ray background rejection in neutron time of flight distributions. By utilizing the slower neutron response as compared to gamma-ray scintillation, background can be rejected using varying pulse shape discrimination methods.
+Most common plastic scintillators exhibit the same response from gamma-ray scattering as neutron scattering, making the two events indiscernible. In order to correct this behavior, many types of neutron-gamma discriminating scintillators have been developed to improve gamma-ray background rejection in neutron time of flight distributions. By utilizing the slower neutron response as compared to gamma-ray scintillation, background can be rejected using varying pulse shape discrimination methods.
 
 \subsubsection{Detector Requirements}
 
@@ -121,7 +122,7 @@ It is apparent that, for a given $\frac{\Delta L}{L}$, the $\frac{\Delta t}{t}$ 
 \begin{figure}[tp]
   \centering
   \includegraphics[width=\linewidth]{Figures/NExT.pdf}
-  \caption{Schematic showing a potential detection configuration for a single NEXT module in a time-of-flight setup. (A) Shown is a top-down view of the detector segmentation along the neutron flight path. (B) shows a side view of the individual segements within the detector, each optically seperated from one another.}
+  \caption{Schematic showing a potential detection configuration for a single NEXT module in a time-of-flight setup. (A) Shown is a top-down view of the detector segmentation along the neutron flight path. (B) Side view of a prototype showing the individual segements within the detector, each optically seperated from one another.}
   \label{fig:NEXTschematic}
 \end{figure}
 NEXT will also have to discriminate neutrons from gamma-rays. Scattered gamma-rays present during an experiment can coincide with start signals, causing significant background in the neutron time-of-flight spectrum.
@@ -135,11 +136,24 @@ There are several materials for solid scintillators which can provide good neutr
 %\caption{Conceptual design  drawings of the two possible geometries of a NEXT module detector. Each  module consists of 8 6-mm thick layers of plastic scintillator, 25~cm long}
 %\label{fig:NEXT_modules}
 %\end{figure}
-\begin{figure}[tp]
+
+\begin{figure}[!ht]
  \centering
+ \begin{subfigure}{\linewidth}
+  \centering
   \includegraphics[width=\linewidth,trim={3.7cm 0 0 0},clip]{Figures/Geometries.eps}
-  \caption{Visualization of a 1 Mev neutron event in NEXT\emph{sim} for two geometries considered for a NEXT layer. Green lines correspond to optical photons produced in the sctintillation.}
-  \label{fig:Geometries}
+ \caption{}
+ \end{subfigure}%
+ \\
+ \begin{subfigure}{\linewidth}
+  \centering
+  \includegraphics[width=\linewidth]{Figures/LightCollectionEfficiency.eps}
+% \caption{Scatter plot of simulated light collection efficiency as a function of the deposited energy by 1 MeV neutrons for the two different geometries shown in Figure \ref{fig:Geometries}.}
+% \label{fig:Efficiency}
+  \caption{}
+ \end{subfigure}%
+ \caption{Visualization of a 1 Mev neutron event in NEXT\emph{sim} for two geometries considered for a NEXT layer. Green lines correspond to optical photons produced in the sctintillation.}
+ \label{fig:Geometries}
 \end{figure} 
 
 
