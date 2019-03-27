@@ -3,6 +3,7 @@
 \usepackage{lineno,hyperref}
 \usepackage{color}
 \usepackage{amsmath}
+\usepackage{xfrac}
 \usepackage{subcaption}
 \usepackage{verbatim}
 \usepackage[percent]{overpic}
@@ -25,7 +26,7 @@
 
 \begin{frontmatter}
 
-\title{Conceptual design of a new neutron detector with neutron localization capabilities}
+\title{New Detector Concept with neutron interaction localization capabilities}
 %\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
 
 
@@ -50,7 +51,9 @@
 \author[TTUaddress]{L. D. Mostella}
 \author[TTUaddress]{J. S. Owens}
 \author[TTUaddress]{S. C. Shadrick}
-
+\author[UKaddress]{E. E. Peters}
+\author[UKaddress]{A. P. D. Ramirez}
+\author[UKaddress]{S. W. Yates}
 \author[JINPAaddress]{S. Munoz}
 
 
@@ -64,16 +67,18 @@
 \address[ORNLaddress]{Physics Division, Oak Ridge National Laboratory, Oak Ridge TN 37831 USA}
 \address[TTUaddress]{Department of Physics Tennessee Technological University, Cookeville, Tennessee, 38505, USA}
 \address[JINPAaddress]{Joint Institute for Nuclear Physics and Applications, Oak Ridge TN 37831 USA}
+\address[UKaddress]{Department of Physics and Astronomy and Chemistry, University of Kentucky, Lexington, Kentucky, 40506 USA}
+
 %\address[otheraddress]{Others' Addresses}
 
 
 %% abstract
 \begin{abstract}
-A new high resolution neutron detector concept which time of flight measurements is proposed. Energy resolutions from time of flight measurements are determined by the uncertainty in timing and position. A single NEXT module will be composed of thin segments of neutron-discriminating plastic scintillator, each optically separated, coupled to a position sensitive detector for the readout. The goal of NEXT is to maintain neutron detection efficiency and reduce uncertainties in time of flight energy calculations.
+A new high precision time of flight neutron detector concept for beta-delayed neutron emission and direct reaction studies is proposed. The Neutron dEtector with Xn Tracking (NEXT) array aims to maintain high instrinsic neutron detection efficiency while reducing uncertainties in neutron energy measurements. A single NEXT module will be composed of thin segments of neutron-discriminating plastic scintillator, each optically separated, coupled to a position sensitive photo-detector. By incorporating a position sensitive photo-detector with a large optically separated scintillator, NEXT will achieve high precision determination of neutron time of arrival and interaction position within the active volume. A design study has been conducted based on simulations and experimental tests leading to construction of prototype units. First results from neutron measurements will be discussed. 
 \end{abstract}
 
 \begin{keyword}
-$\beta$-delayed neutron emission
+$\beta$-delayed neutron emission, direct reactions, time of flight 
 \end{keyword}
 
 \end{frontmatter}
@@ -82,51 +87,46 @@ $\beta$-delayed neutron emission
 %\linenumbers
 
 \section{Introduction}
-New generation radioactive ion beam facilities enable access to very neutron rich nuclei, approaching, and even reaching the neutron drip-line in certain
-cases \cite{FRIB}.
+New generation radioactive ion beam facilities enable access to very neutron rich nuclei, approaching, and even reaching the neutron drip-line in certain cases \cite{FRIB}.
 Far from stability, neutron separation energies decrease as beta-decay endpoint energies become large, increasing the likelihood of beta-delayed neutron emission. Neutron spectroscopy becomes essential to obtain important information about the nuclear structure for these very neutron-rich nuclei \cite{RevModPhys.84.567,NAKAMURA201753,BLANK2008403}. 
-Neutron dEtector with Xn Tracking (NEXT) has been devoloped to improve neutron energy resolution while still being viable to observe beta-delayed neutron emitters close to the neutron drip line. 
-This high-precision neutron detector will also be applicable to proton transfer reactions, e.g. to probe single-particle proton states of exotic nuclei.[ADD CITATION, LENDA reference]
-\begin{center}
-[Sentence covering other direct reactions,fission,alpha]
-\end{center}
-NEXT has been designed around neutron-gamma discriminating scintillator in order to improve background rejection. Prevelant gamma-ray background common in decay and reaction experimental setups can be removed from neutron spectra, further improving neutron energy measurements \cite{FEBBRARO2018189}.
+Neutron dEtector with Xn Tracking (NEXT) has been devoloped to observe beta-delayed neutron emitters with improved precision. 
+These improvements will also be applicable to proton transfer reactions which probe discrete states of exotic nuclei [REPLACE with FEBBRARO].
+NEXT has been designed around neutron-gamma discriminating scintillator in order to improve background rejection. Prevelant gamma-ray background common in decay and reaction experimental setups can be reduced significantly in neutron spectra, further improving neutron energy measurements \cite{FEBBRARO2018189}.
 
 
 \section{Detector Design}
 
-When the neutron kinetic energies are measured via time-of-flight, the energy resolution is given by the following expression \cite{KORNILOV2009226}:
+When the neutron kinetic energies are measured via time-of-flight (ToF), the energy resolution is given by the following expression \cite{KORNILOV2009226}:
 \begin{equation}
 \frac{\Delta E}{E}=\sqrt{\left(\frac{2\Delta t}{t}\right )^2+\left(\frac{2\Delta L}{L}\right )^2},
 \label{eq:resolution}
 \end{equation}
-in which $t$  is the time-of-flight of the particle ($\Delta$t is uncertainty in time-of-flight) and $L$ is the corresponding flight path-length ($\Delta$L is the uncertainty in neutron path-length). Therefore, the energy resolution is directly related with the time resolution of the detection system, and the precision in the measurement of the path-length. The latter is mainly due the the uncertainty in the determination of the interaction point within the active volume of the detector. One of the factors which limits this precision is the required thickness facing the trajectory, because the interaction can occur anywhere within the detector. Thick detectors are needed to maintain neutron detection efficiency, but at the expense of a good position resolution. Typical thicknesses for plastic-scintillator-based neutron ToF detectors are about 3~cm, which is a good trade-off between position resolution and efficiency \cite{PETERS2016122,BUTA2000412,MORRISSEY1997222}.
+in which $t$  is the time-of-flight of the particle ($\Delta$t is uncertainty in time-of-flight) and $L$ is the corresponding flight path-length ($\Delta$L is the uncertainty in neutron path-length). Therefore, the energy resolution is directly related to the time resolution of the detection system, and the precision in the measurement of the path-length. The latter is mainly due the the uncertainty in the determination of the interaction point within the active volume of the detector. One of the factors which limits this precision is the required thickness along the trajectory, because the interaction can occur anywhere within the detector. Thick detectors are needed to maintain neutron detection efficiency, but at the expense of a good position resolution. Typical thicknesses for plastic-scintillator-based neutron ToF detectors (VANDLE,LENDA,$\ldots$) are about 2-3~cm, which is a good trade-off between position resolution and efficiency \cite{PETERS2016122,BUTA2000412,MORRISSEY1997222,PERDIKAKIS2012117}.
 \begin{figure}[tp]
 \centering
 %\includegraphics[width=0.33\textwidth]{Figures/NEXT_module.eps}
 %\includegraphics[width=\linewidth]{Figures/NEXT_EnergyFOM.png}
 \includegraphics[width=\linewidth]{Figures/a_col.eps}
-\caption{(a) Energy resolution of varying prototype tile thicknesses (1-6~mm) as a function of neutron energy. The black curve represents the current energy resolution calculations as a function of energy for a VANDLE (L=100~cm, $\Delta$L=3~cm, and $\Delta$t=3~ns). (b) Figure of Merit (FOM) calculations for detector performance as a function of neutron energy. (c) and (d) show FOMs as a function of tile thickness and timing resolution respectively. The differnent colored data points correspond to different flight path lengths. The orange vertical line in (c) and (d) are the expected detector performance with current proposed design specifications ($\Delta$L=6~mm and $\Delta$t=500~ps).}
+\caption{(a) Energy resolution of varying prototype tile thicknesses (1-6~mm) as a function of neutron energy. The black curve represents the current energy resolution calculations as a function of energy for a VANDLE (L=100~cm, $\Delta$L=3~cm, and $\Delta$t=3~ns). (b) Figure of Merit (FOM) calculations for detector performance based on curves in (a) as a function of neutron energy. (c) and (d) show FOMs as a function of tile thickness and timing resolution respectively. The differnent colored data points correspond to different flight path lengths. The orange vertical line in (c) and (d) are the expected detector performance with current proposed design specifications ($\Delta$L=6~mm and $\Delta$t=500~ps).}
 \label{fig:resolution}
 \end{figure}
 
-
-Most common plastic scintillators exhibit the same response from gamma-ray scattering as neutron scattering, making the two events indiscernible. In order to correct this behavior, many types of neutron-gamma discriminating scintillators have been developed to improve gamma-ray background rejection in neutron time of flight distributions. By utilizing the slower neutron response as compared to gamma-ray scintillation, background can be rejected using varying pulse shape discrimination methods.
+Common plastic scintillators exhibit the same response from gamma-ray scattering as neutron scattering, making the two events indiscernible. In order to correct this behavior, many types of neutron-gamma discriminating scintillators have been developed to improve gamma-ray background rejection in neutron time of flight distributions. By implementing neutron-gamma discriminating plastic, energy calculations can be further improved with increased background rejection using conventional pulse shape discrimination methods.
 
 \subsubsection{Detector Requirements}
 
-The design of the NEXT module is a compromise between the necessity to obtain highest possible precision in measurement of position and timing of the neutron and the capabilities of the scintillator material and sensor. The optimal, realistic segmentation has to also warrant sufficiently good light collection in order to retain timing and PSD capabilities. Figure \ref{fig:resolution} shows the dependencies of the  neutron energy resolution on the thickness and timing resolution resulting from implementation of Equation \ref{eq:resolution} for a 1~m neutron flight path. We observe that the 3~cm uncertainty in the distance of the existing VANDLE \cite{PETERS2016122} array is the main limitation in the energy resolution of this detector, especially at neutron energies above 2~MeV.
+The design of the NEXT module is dictated by the necessity to obtain highest possible precision in measurement of position and timing of the neutron and the capabilities of the scintillator material and sensor. The optimal, realistic segmentation has to warrant sufficiently good light collection in order to retain timing and PSD capabilities. Figure \ref{fig:resolution} shows the dependencies of the  neutron energy resolution on the thickness and timing resolution resulting from implementation of Equation \ref{eq:resolution} for a 1~m neutron flight path, e.g. the 3~cm uncertainty in the ToF distance of VANDLE \cite{PETERS2016122} is the main limitation in the energy resolution of this detector, especially at neutron energies above 2~MeV.
 
 It is apparent that, for a given $\frac{\Delta L}{L}$, the $\frac{\Delta t}{t}$  should be commensurate, meaning that for a particular timing resolution $\Delta$t, and particular L, there is an minimal segment thickness $\frac{\Delta L}{L}$, beyond which the timing resolution dominates the overall energy resolution. For the typical L=50-100~cm and $\Delta$t=1~ns  timing resolution, the segment thickness should be no more than 10~mm. Thin detectors (3-6~mm) will have lower uncertainty in the determination of the position while the contribution due to the time resolution becomes more important.
 
 \begin{figure}[tp]
   \centering
-  \includegraphics[width=\linewidth]{Figures/NExT.pdf}
+  \includegraphics[width=\linewidth]{Figures/NEXT.pdf}
   \caption{Schematic showing a potential detection configuration for a single NEXT module in a time-of-flight setup. (A) Shown is a top-down view of the detector segmentation along the neutron flight path. (B) Side view of a prototype showing the individual segements within the detector, each optically seperated from one another.}
   \label{fig:NEXTschematic}
 \end{figure}
 NEXT will also have to discriminate neutrons from gamma-rays. Scattered gamma-rays present during an experiment can coincide with start signals, causing significant background in the neutron time-of-flight spectrum.
-There are several materials for solid scintillators which can provide good neutron-gamma discrimination and good timing, such as stilbene, anthracene, and para-terphenyl. Each of them presently cannot be used as a material for the proposed detector due to limited ability to be machined into a segmented array. When a viable neutron-gamma discriminating plastic scintillator was first developed \cite{Zaitseva2012}, the polymer was not rigid enough to facilitate machining. The plastic scintillator commercialized as Eljen 299 (EJ-299) had to be cast directly into the final detector geometry, making the assemby of a segmented detector from this plastic scintillator expensive and time consuming. However, recent improvements to the EJ-299 polymer matrix has increased physical stability as well as pulse shape discrimination capabilities \cite{ZAITSEVA201897}. This new plastic scintillator, Eljen 276 (EJ-276), has neutron-gamma discrimination comparable to liquid scintillator and is now rigid enough to be machined to the appropriate thicknesses for a high resolution neutron time-of-flight detector.
+There are several solid-state scintillators which can provide good neutron-gamma discrimination and timing, such as stilbene, anthracene, and para-terphenyl. Each of them presently cannot be used as a material for the proposed detector due to limited ability to be machined into a large segmented array. When a viable neutron-gamma discriminating plastic scintillator was first developed \cite{Zaitseva2012}, the polymer was not rigid enough to facilitate machining. The plastic scintillator commercialized as Eljen 299 (EJ-299) had to be cast directly into the final detector geometry, making the assemby of a segmented detector from this plastic scintillator expensive and time consuming. However, recent improvements to the EJ-299 polymer matrix has increased physical stability as well as pulse shape discrimination capabilities \cite{ZAITSEVA201897}. This new plastic scintillator, Eljen 276 (EJ-276), has neutron-gamma discrimination comparable to liquid scintillator and is now rigid enough to be machined to the appropriate thicknesses for a high resolution neutron time-of-flight detector.
 
 \subsection{Detector Concept}
 %\begin{figure}[tp]
@@ -136,8 +136,7 @@ There are several materials for solid scintillators which can provide good neutr
 %\caption{Conceptual design  drawings of the two possible geometries of a NEXT module detector. Each  module consists of 8 6-mm thick layers of plastic scintillator, 25~cm long}
 %\label{fig:NEXT_modules}
 %\end{figure}
-
-\begin{figure}[!ht]
+\begin{figure}[t]
  \centering
  \begin{subfigure}{\linewidth}
   \centering
@@ -152,21 +151,20 @@ There are several materials for solid scintillators which can provide good neutr
 % \label{fig:Efficiency}
   \caption{}
  \end{subfigure}%
- \caption{Visualization of a 1 Mev neutron event in NEXT\emph{sim} for two geometries considered for a NEXT layer. Green lines correspond to optical photons produced in the sctintillation.}
- \label{fig:Geometries}
+ \caption{Visualization of a 1 Mev neutron event in NEXT\emph{sim} for two geometries considered for a NEXT layer. Green lines correspond to optical photons produced in the scintillation.}
+ \label{fig:GeoEff}
 \end{figure} 
 
-
-The NEXT array concept is based on multi-layered modules of neutron-gamma discriminating plastic scintillator with a position sensitive photodetectors on both ends of a module. Each module consists of eight 6-mm-thick layers, therefore the total effective thickness is 4.8~cm. These dimensions were driven, among other factors, by the availability of small form factor photo-sensors and will be substantiated later in the text. Figure \ref{fig:NEXTschematic} shows a possible multi-layered module configuration, with segmentation along the horizontal and vertical directions. The photon sensors considered are either an array of silicon photomultipliers (SiPMs) or flat panel multi anode photomultiplier tubes (MAPMTs). Analysis of the position sensitive photosensor response from detected scintillation light will determine the precise layer in which the neutron scattered, reducing the uncertainy in the neutron flight path-length. The fast timing (sub nanosecond) capabilities of these photosensors will further improve energy resolutions by reducing the time of flight uncertainty. 
+The NEXT array concept is based on multi-layered modules of neutron-gamma discriminating plastic scintillator with a position sensitive photodetectors on both ends of a module. Each module consists of eight 6-mm-thick layers, therefore the total effective thickness is 4.8~cm. These dimensions were driven, among other factors, by the availability of small form factor photo-sensors and will be substantiated later in the text. Figure \ref{fig:NEXTschematic} shows a possible multi-layered module configuration, with segmentation along the horizontal and vertical directions. The photon sensors considered are either an array of silicon photomultipliers (SiPMs) or flat panel multi-anode photomultiplier tubes (MAPMTs). Analysis of the position sensitive photosensor response from detected scintillation light will determine the precise layer in which the neutron scattered, reducing the uncertainy in the neutron flight path-length. The fast timing (sub nanosecond) capabilities of these photosensors will further improve energy resolutions by reducing the time-of-flight uncertainty. 
 
 \input{Simulations}
 
 \input{DetectorTests}
 
 \section{Conclusions}
-After extensive development guided by simulations and single segment tests, a NEXT prototype has been built with 4x8 segmentation. The prototype meets design goals with 6~mm tile thickness and 548~ps time-of-flight resolution. A proof-of-principle neutron energy measurement was made using fission neutrons from a $^{252}$Cf source. The measured neutron yield matched the expected distribution based on GEANT4 prototype simulations.
+After extensive development guided by simulations and single segment tests, a NEXT prototype has been built with 4x8 segmentation. The prototype meets design goals with 6~mm tile thickness and 548~ps time-of-flight resolution. A proof-of-principle neutron energy measurement was made using fission neutrons from a $^{252}$Cf source. The measured neutron yield matched the expected distribution based on GEANT4 prototype simulations. Also, the position dependent timing was validated through preliminary analysis of 1013 keV neutron ToF measurements using the NEXT prototypes.
 SensL\textsuperscript{\texttrademark} J-Series SiPMs successfully measured gamma-ray time of flight with approximately 500 ps timing resolution, validating SiPMs as potential detectors for future development of small scale time of flight arrays.
-While NEXT is under current prototyping, it will be continually redesigned to incorporate further breakthroughs in neutron-gamma discriminating plastic scintillator and position sensitive photodetector technologies.\\
+While NEXT is still in the prototyping phase, it will be continually redesigned to incorporate further breakthroughs in neutron-gamma discriminating solid-state scintillators and position sensitive photodetector technologies.\\
 This research was sponsored by the U.S. Department of Energy, National Nuclear Security Administration under the Stewardship Science Academic Alliances program through DOE Award No. DOE DE-NA0002934 and DE-NA0002132.
 
 %HERE the BIBLIOGRAPHY
